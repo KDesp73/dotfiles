@@ -140,7 +140,7 @@ return require('packer').startup(function(use)
     use {
         "nvim-neorg/neorg",
         config = function()
-            require('neorg').setup {
+            require("neorg").setup {
                 load = {
                     ["core.defaults"] = {},
                     ["core.concealer"] = {},
@@ -160,8 +160,8 @@ return require('packer').startup(function(use)
 
     -- use ('rcarriga/nvim-notify')
 
-    use('ThePrimeagen/vim-be-good')
-    use 'evanleck/vim-svelte'
+    use "ThePrimeagen/vim-be-good"
+    use "evanleck/vim-svelte"
 
     -- use {
     --     "folke/noice.nvim",
