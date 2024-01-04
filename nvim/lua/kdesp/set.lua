@@ -23,23 +23,24 @@ vim.opt.relativenumber = true
 
 -- EditorConfig Format on save
 function loadAndEdit()
-  vim.cmd('EditorConfigReload')
-  vim.cmd('e')
+    vim.cmd('EditorConfigReload')
+    vim.cmd('e')
 end
 
 -- vim.cmd([[
-  -- augroup EditorConfigAutoReload
-    -- autocmd!
-    -- autocmd BufWritePost *.cpp, *.h, *.hpp lua ReloadAndEdit()
-  -- augroup END
+-- augroup EditorConfigAutoReload
+-- autocmd!
+-- autocmd BufWritePost *.cpp, *.h, *.hpp lua ReloadAndEdit()
+-- augroup END
 -- ]])
 
 vim.cmd [[
-  augroup RubyAutocommands
-  autocmd!
-  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  augroup END
+augroup RubyAutocommands
+autocmd!
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+augroup END
 ]]
+
 

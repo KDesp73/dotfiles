@@ -6,7 +6,7 @@ lsp.ensure_installed({
     'pyright',
     'lemminx',
     'eslint',
-    'rust_analyzer'
+    'rust_analyzer',
 })
 
 local cmp = require('cmp')

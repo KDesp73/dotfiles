@@ -104,18 +104,19 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export repos="/home/konstantinos/personal/repos"
-export neoconf="/home/konstantinos/.config/nvim"
-export tmuxconf="/home/konstantinos/.config/tmux"
+export repos="$HOME/personal/repos"
+export neoconf="$HOME/.config/nvim"
+export tmuxconf="$HOME/.config/tmux"
 export dotfiles="$repos/misc/dotfiles"
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 
 # aliases
-alias ls=lsd
+alias ls="lsd"
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
+alias nvim="nvim -u $dotfiles/nvim/init.lua"
 alias vi=nvim
 alias nv=nvim
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
@@ -134,6 +135,10 @@ alias gitlog="git log --oneline | fzf --preview 'git show --name-only {1}'"
 alias exti=exit
 alias ezit=exit
 alias ezti=exit
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
+alias show_cursor="echo \"\\e[?25h\""
+alias hide_cursor="echo \"\\e[?25l\""
 
 source $ZSH/oh-my-zsh.sh
 
