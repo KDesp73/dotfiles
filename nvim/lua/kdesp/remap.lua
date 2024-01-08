@@ -6,6 +6,8 @@ local map = vim.keymap.set
 map("n", "<leader>e", vim.cmd.Ex)
 map("n", "<leader>ε", vim.cmd.Ex)
 
+vim.api.nvim_set_keymap("n", "<leader>sx", ":w<CR>:source %<CR>", {silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-σ>", ":w!<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w!<CR>a", { noremap = true, silent = true })
@@ -16,7 +18,7 @@ map("i", "<C-c>", vim.cmd.BufferClose)
 map("v", "<C-c>", vim.cmd.BufferClose)
 
 -- delete text but don't copy to clipboard
-map({ "n", "v" }, "<leader>d", [["_d]]) 
+map({ "n", "v" }, "<leader>d", [["_d]])
 -- paste text but DONT copy the overridden text
 map("x", "p", [["_dP]])
 
@@ -29,8 +31,6 @@ map("n", "<leader>qq", ":q<CR>", { desc = "Quit buffer without save" })
 map("n", "<leader>qa", ":qa<CR>", { desc = "Quit all buffer with save" })
 map("n", "<M-q>", "<cmd>q<CR>")
 
-vim.api.nvim_set_keymap("n", "<leader>sx", ":w<CR>:source %<CR>", {silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<CR>", {silent = true})
 
 -- Abbrev
 vim.cmd("cnoreabbrev Q  q")

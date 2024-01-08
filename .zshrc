@@ -112,11 +112,11 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 
 # aliases
-alias ls="lsd"
+alias ls=lsd
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
-alias nvim="nvim -u $dotfiles/nvim/init.lua"
+# alias nvim="nvim -u $HOME/.config/nvim/init.lua"
 alias vi=nvim
 alias nv=nvim
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
@@ -128,7 +128,7 @@ alias update="sudo apt update && sudo apt upgrade -y"
 alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
 
-alias fzf="fzf --preview 'cat {1}'"
+# alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
 alias gitlog="git log --oneline | fzf --preview 'git show --name-only {1}'" 
 
@@ -141,5 +141,7 @@ alias show_cursor="echo \"\\e[?25h\""
 alias hide_cursor="echo \"\\e[?25l\""
 
 source $ZSH/oh-my-zsh.sh
+
+
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

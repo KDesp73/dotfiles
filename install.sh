@@ -22,6 +22,7 @@ fi
 # Install fzf
 if [ ! -d "$HOME/fzf" ]; then
     git clone https://github.com/junegunn/fzf.git "$HOME/fzf"
+    cd "$HOME/fzf" && ./install
 fi
 
 # Install packer
@@ -34,17 +35,14 @@ fi
 if command -v nvim > /dev/null 2>&1; then
     echo "Neovim is already installed."
 else
-    # Install prerequisites (for Ubuntu)
-    sudo apt install -y software-properties-common
-    sudo add-apt-repository ppa:neovim-ppa/stable
-    sudo apt update
-
-    # Install Neovim
-    sudo apt install -y neovim
+    git clone https://github.com/neovim/neovim "$HOME/neovim"
+    cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+    git checkout stable
+    sudo make install
 fi
 
-# Install the latest version of Neovim (for Ubuntu)
-nvim +PlugInstall +qall
+# # Install the latest version of Neovim (for Ubuntu)
+# nvim +PlugInstall +qall
 
 # Install tmux
 if command -v tmux > /dev/null 2>&1; then
