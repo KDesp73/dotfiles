@@ -112,17 +112,16 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 
 # aliases
-alias ls=lsd
-alias la="ls -a"
-alias ll="ls -l"
-alias lla="ls -la"
+alias ls="lsd"
+alias la="lsd -a"
+alias ll="lsd -l"
+alias lla="lsd -la"
 # alias nvim="nvim -u $HOME/.config/nvim/init.lua"
 alias vi=nvim
 alias nv=nvim
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias python=python3
 alias beep='paplay $BEEP'
-alias pomodoro="$repos/cpp/Cli_Pomodoro/CliPomodoro"
 alias server="ruby $repos/ruby/Ruby_Web_Server/run.rb"
 alias update="sudo apt update && sudo apt upgrade -y"
 alias mvn-init="~/mvn-init.sh"

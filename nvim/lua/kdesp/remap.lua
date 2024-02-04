@@ -13,10 +13,13 @@ vim.api.nvim_set_keymap("n", "<C-σ>", ":w!<CR>", { noremap = true, silent = tru
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w!<CR>a", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-σ>", "<Esc>:w!<CR>a", { noremap = true, silent = true })
 
-map("n", "<C-c>", vim.cmd.BufferClose)
-map("i", "<C-c>", vim.cmd.BufferClose)
-map("v", "<C-c>", vim.cmd.BufferClose)
+-- Remap Ctrl+C to Esc
+vim.api.nvim_set_keymap('n', '<C-c>', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<C-c>', '<Esc>', { noremap = true, silent = true })
 
+-- Remap Esc to vim.cmd.BufferClose
+vim.api.nvim_set_keymap('n', '<Esc>', ':lua vim.cmd("BufferClose")<CR>', { noremap = true, silent = true })
 -- delete text but don't copy to clipboard
 map({ "n", "v" }, "<leader>d", [["_d]])
 -- paste text but DONT copy the overridden text

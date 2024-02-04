@@ -36,53 +36,53 @@ return require('packer').startup(function(use)
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {                            -- Optional
-                'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
-             },
-            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-            -- Autocompletion
-            { 'hrsh7th/nvim-cmp' }, -- Required
-            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-            { 'L3MON4D3/LuaSnip' }, -- Required
-        }
-    }
-
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
+            'williamboman/mason.nvim',
+            run = function()
+                pcall(vim.cmd, 'MasonUpdate')
+            end,
         },
+        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+        -- Autocompletion
+        { 'hrsh7th/nvim-cmp' }, -- Required
+        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+        { 'L3MON4D3/LuaSnip' }, -- Required
     }
+}
 
-    use {
-        'romgrk/barbar.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons' }
-    }
+use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+    },
+}
 
-    -- Debugger
-    -- 
-    use('mfussenegger/nvim-dap')
-    use('theHamsta/nvim-dap-virtual-text')
-    use('nvim-telescope/telescope-dap.nvim')
-    use('rcarriga/cmp-dap')
-    use {
-        "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" }
-    }
+use {
+    'romgrk/barbar.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' }
+}
+
+-- Debugger
+-- 
+use('mfussenegger/nvim-dap')
+use('theHamsta/nvim-dap-virtual-text')
+use('nvim-telescope/telescope-dap.nvim')
+use('rcarriga/cmp-dap')
+use {
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" }
+}
 
 
 
-    use('sophacles/vim-processing')
+use('sophacles/vim-processing')
 
-    use { -- needs configuring
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" }
-        }
+use { -- needs configuring
+"ThePrimeagen/refactoring.nvim",
+requires = {
+    { "nvim-lua/plenary.nvim" },
+    { "nvim-treesitter/nvim-treesitter" }
+}
     }
 
     use {
@@ -163,16 +163,6 @@ return require('packer').startup(function(use)
     use "ThePrimeagen/vim-be-good"
     use "evanleck/vim-svelte"
 
-    -- use {
-    --     "folke/noice.nvim",
-    --     config = function()
-    --         -- Add any options here
-    --     end,
-    --     requires = {
-    --         { "MunifTanjim/nui.nvim" },
-    --         { "rcarriga/nvim-notify" }
-    --     }
-    -- }
 
     use "jalvesaq/Nvim-R"
 
@@ -180,5 +170,24 @@ return require('packer').startup(function(use)
     use "folke/neodev.nvim"
 
     use "KDesp73/project-starter.nvim"
+    use "KDesp73/todo-manager.nvim"
     -- use "/home/konstantinos/personal/repos/lua/plugins/project-starter.nvim"
+    -- use "/home/konstantinos/personal/repos/lua/plugins/todo-manager.nvim"
+
+    use "HakonHarnes/img-clip.nvim"
+
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use "folke/todo-comments.nvim"
+
+    use {
+        'akinsho/flutter-tools.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'stevearc/dressing.nvim', -- optional for vim.ui.select
+        },
+    }
 end)

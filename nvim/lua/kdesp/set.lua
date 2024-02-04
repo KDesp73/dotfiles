@@ -20,6 +20,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
+vim.opt.mouse= ""
 
 -- EditorConfig Format on save
 function loadAndEdit()
