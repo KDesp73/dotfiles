@@ -116,13 +116,10 @@ if [ "$1" = "apps" ]; then
         # Prerequisites
         sudo apt-get install ninja-build gettext cmake unzip curl
 
-        git clone https://github.com/neovim/neovim "$HOME/neovim"
-        cd "$HOME/neovim" || exit 1
-        make CMAKE_BUILD_TYPE=RelWithDebInfo
-        git checkout stable
-        
-        # For Debian / Ubuntu
-        cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+        sudo apt install -y software-properties-common
+        sudo add-apt-repository -y ppa:neovim-ppa/unstable
+        sudo apt update
+        sudo apt install -y neovim
 
         echo_installed "neovim"
     fi
@@ -140,6 +137,7 @@ if [ "$1" = "apps" ]; then
         echo_installed "oh-my-zsh"
         rm "$HOME/.zshrc" # Because we will install our own
         rm "$HOME/.zshrc.pre-oh-my-zsh"
+        exit
     else 
         echo_already_installed "oh-my-zsh"
     fi
