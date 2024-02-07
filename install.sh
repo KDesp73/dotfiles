@@ -78,15 +78,6 @@ if [ "$1" = "apps" ]; then
         echo_failed "fonts-powerline"
     fi
 
-    # Check if zsh is installed
-    if command -v zsh > /dev/null 2>&1; then
-        echo_already_installed "zsh"
-    else
-        sudo apt install zsh -y
-        echo_installed "zsh" 
-        chsh -s "$(command -v zsh)" "$USER"
-    fi
-
 
     # Install go for fzf
     sudo apt install -y golang-go 
@@ -102,31 +93,14 @@ if [ "$1" = "apps" ]; then
         cd "$HOME/fzf" && ./install
 
         echo_installed "fzf"
-    fi
-
-    # Install packer
-    if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
-        git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-            "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-        echo_installed "packer.nvim"
+        cd "$SCRIPT_DIR" || exit 1
     fi
 
     # Install Neovim
     if command -v nvim > /dev/null 2>&1; then
         echo_already_installed "neovim"
     else
-        # Prerequisites
-        sudo apt-get install ninja-build gettext cmake unzip curl
-
-        git clone https://github.com/neovim/neovim "$HOME/neovim"
-        cd "$HOME/neovim" || exit 1
-        make CMAKE_BUILD_TYPE=RelWithDebInfo
-        git checkout stable
-        rm -r build/  # clear the CMake cache
-        make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
-        make install
-        export PATH="$HOME/neovim/bin:$PATH"
-
+        ./scripts/neovim-installer.sh
         echo_installed "neovim"
     fi
 
@@ -134,18 +108,16 @@ if [ "$1" = "apps" ]; then
     if command -v tmux > /dev/null 2>&1; then
         echo_already_installed "tmux"
     else
-        sudo apt install -y tmux
+        ./scripts/tmux-installer.sh
         echo_installed "tmux"
     fi
 
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        echo_installed "oh-my-zsh"
-        rm "$HOME/.zshrc" # Because we will install our own
-        rm "$HOME/.zshrc.pre-oh-my-zsh"
-        exit
-    else 
-        echo_already_installed "oh-my-zsh"
+    # Install zsh
+    if command -v zsh > /dev/null 2>&1; then
+        echo_already_installed "zsh"
+    else
+        ./scripts/zsh-installer.zsh
+        echo_installed "zsh" 
     fi
 
     cd "$SCRIPT_DIR" || exit 1
@@ -159,10 +131,5 @@ DEBU "script directory: $SCRIPT_DIR"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
 
 # Things to do after installing the dotfiles
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-git clone https://git::@github.com/tmux-plugins/tmux-sensible ~/.config/tmux/plugins/tmux-sensible
-git clone https://git::@github.com/tmux-plugins/tmux-yank ~/.config/tmux/plugins/tmux-yank
-git clone https://git::@github.com/christoomey/vim-tmux-navigator ~/.config/tmux/plugins/vim-tmux-navigator
-git clone https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catpuccin-tmux
 
 exit 0
