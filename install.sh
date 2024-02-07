@@ -7,7 +7,9 @@ fi
 
 
 if [ "$1" = "clean" ]; then
-    echo "Not implemented yet."
+    rm -rf "$HOME/.zshrc"
+    rm -rf "$HOME/.config/nvim"
+    rm -rf "$HOME/.config/tmux"
 fi
 
 if [ "$1" = "apps" ]; then
