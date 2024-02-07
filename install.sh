@@ -42,6 +42,9 @@ if [ "$1" = "apps" ]; then
         echo "[INFO] zsh installed successfully"
     fi
 
+    # Install oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 
     # Install go for fzf
     sudo apt install golang-go 
