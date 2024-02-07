@@ -44,8 +44,10 @@ if [ "$1" = "clean" ]; then
     rm -rf "$HOME/.config/nvim"
     rm -rf "$HOME/.config/tmux"
     rm -rf "$HOME/neovim"
+    sudo apt remove nvim -y
     sudo apt remove tmux -y
     sudo apt remove -y fonts-powerline
+    sudo apt autoremove
 
     INFO "Cleaned"
     exit 0
@@ -57,6 +59,15 @@ if [ "$1" = "apps" ]; then
         sudo apt install -y git
         echo_installed "git"
     fi
+
+    # Install cargo
+    if ! command -v cargo > dev/null 2>&1; then
+        curl https://sh.rustup.rs -sSf | sh
+        echo_installed "cargo"
+    fi
+    
+    # Install bob-nvim
+    cargo install bob-nvim
 
     if ! command -v make > /dev/null 2>&1; then
         sudo apt install -y make
