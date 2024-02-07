@@ -6,11 +6,20 @@ if ! command -v apt > /dev/null 2>&1; then
 fi
 
 
+if [ "$1" = "clean" ]; then
+    
+fi
+
 if [ "$1" = "apps" ]; then
     # Check if git is installed
     if ! command -v git > /dev/null 2>&1; then
         sudo apt install -y git
         echo "[INFO] git is installed successfully"
+    fi
+
+    if ! command -v make > /dev/null 2>&1; then
+        sudo apt install -y make
+        echo "[INFO] make is installed successfully"
     fi
 
     # Install powerline fonts
@@ -31,6 +40,9 @@ if [ "$1" = "apps" ]; then
         echo "[INFO] zsh installed successfully"
     fi
 
+
+    # Install go for fzf
+    sudo apt install golang-go 
 
     # Install fzf
     if [ ! -d "$HOME/fzf" ]; then
