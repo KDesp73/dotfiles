@@ -115,6 +115,10 @@ if [ "$1" = "apps" ]; then
         cd "$HOME/neovim" && make CMAKE_BUILD_TYPE=RelWithDebInfo
         git checkout stable
         sudo make -y install
+        rm -r build/  # clear the CMake cache
+        make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+        make install
+        export PATH="$HOME/neovim/bin:$PATH"
         echo_installed "neovim"
     fi
 
