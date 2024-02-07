@@ -36,6 +36,7 @@ fi
 
 
 if [ "$1" = "clean" ]; then
+    rm -rf "$HOME/fzf"
     rm -rf "$HOME/.zshrc"
     rm -rf "$HOME/.oh-my-zsh"
     rm -rf "$HOME/.config/nvim"
@@ -60,6 +61,11 @@ if [ "$1" = "apps" ]; then
         echo_installed "make"
     fi
 
+    if ! command -v cmake > /dev/null 2>&1; then
+        sudo apt install -y cmake
+        echo_installed "cmake"
+    fi
+
     # Install powerline fonts
     sudo apt install -y fonts-powerline
     if [ $? -ne 1 ]; then
@@ -77,16 +83,14 @@ if [ "$1" = "apps" ]; then
         chsh -s "$(command -v zsh)" "$USER"
     fi
 
-    if [ ! -d "$HOME/.oh-my-zsh" ]; then
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        echo_installed "oh-my-zsh"
-    else 
-        echo_already_installed "oh-my-zsh"
-    fi
 
     # Install go for fzf
     sudo apt install -y golang-go 
-    echo_installed "go"
+    if [ $? -ne 1 ]; then
+        echo_installed "go"
+    else
+        echo_failed "go"
+    fi
 
     # Install fzf
     if [ ! -d "$HOME/fzf" ]; then
@@ -120,6 +124,13 @@ if [ "$1" = "apps" ]; then
     else
         sudo apt install -y tmux
         echo_installed "tmux"
+    fi
+
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        echo_installed "oh-my-zsh"
+    else 
+        echo_already_installed "oh-my-zsh"
     fi
 
     exit 0
