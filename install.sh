@@ -68,6 +68,8 @@ if [ "$1" = "apps" ]; then
     
     # Install bob-nvim
     cargo install bob-nvim
+    bob install v0.10.0
+    echo_installed "neovim"
 
     if ! command -v make > /dev/null 2>&1; then
         sudo apt install -y make
@@ -121,19 +123,19 @@ if [ "$1" = "apps" ]; then
     fi
 
     # Install Neovim
-    if command -v nvim > /dev/null 2>&1; then
-        echo_already_installed "neovim"
-    else
-        # Prerequisites
-        sudo apt-get install ninja-build gettext cmake unzip curl
-
-        sudo apt install -y software-properties-common
-        sudo add-apt-repository -y ppa:neovim-ppa/unstable
-        sudo apt update
-        sudo apt install -y neovim
-
-        echo_installed "neovim"
-    fi
+    # if command -v nvim > /dev/null 2>&1; then
+    #     echo_already_installed "neovim"
+    # else
+    #     # Prerequisites
+    #     sudo apt-get install ninja-build gettext cmake unzip curl
+    #
+    #     sudo apt install -y software-properties-common
+    #     sudo add-apt-repository -y ppa:neovim-ppa/unstable
+    #     sudo apt update
+    #     sudo apt install -y neovim
+    #
+    #     echo_installed "neovim"
+    # fi
 
     # Install tmux
     if command -v tmux > /dev/null 2>&1; then
