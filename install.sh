@@ -10,6 +10,8 @@ if [ "$1" = "clean" ]; then
     rm -rf "$HOME/.zshrc"
     rm -rf "$HOME/.config/nvim"
     rm -rf "$HOME/.config/tmux"
+    rm -rf "$HOME/neovim"
+    exit 0
 fi
 
 if [ "$1" = "apps" ]; then
@@ -44,10 +46,11 @@ if [ "$1" = "apps" ]; then
 
     # Install oh-my-zsh
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+    echo "[INFO] oh-my-zsh installed successfully"
 
     # Install go for fzf
-    sudo apt install golang-go 
+    sudo apt install -y golang-go 
+    echo "[INFO] go installed successfully"
 
     # Install fzf
     if [ ! -d "$HOME/fzf" ]; then
@@ -70,7 +73,7 @@ if [ "$1" = "apps" ]; then
         git clone https://github.com/neovim/neovim "$HOME/neovim"
         cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
         git checkout stable
-        sudo make install
+        sudo make -y install
     fi
 
     # Install tmux
