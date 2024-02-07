@@ -7,7 +7,7 @@ fi
 
 
 if [ "$1" = "clean" ]; then
-    
+    echo "Not implemented yet."
 fi
 
 if [ "$1" = "apps" ]; then
@@ -78,6 +78,7 @@ fi
 
 # Symlink dotfiles
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+echo "[DEBU] script directory: $SCRIPT_DIR"
 
 [ -e "$HOME/.zshrc" ] || ln -s "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 [ -e "$HOME/.config/nvim" ] || ln -s "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
