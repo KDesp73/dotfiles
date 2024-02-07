@@ -131,6 +131,6 @@ DEBU "script directory: $SCRIPT_DIR"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
 INFO "Created links for dotfiles"
 
-# Things to do after installing the dotfiles
+./scripts/font-installer.sh
 
 exit 0
