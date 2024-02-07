@@ -132,7 +132,6 @@ if [ "$1" = "apps" ]; then
         echo_already_installed "tmux"
     else
         sudo apt install -y tmux
-        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         echo_installed "tmux"
     fi
 
@@ -155,5 +154,11 @@ DEBU "script directory: $SCRIPT_DIR"
 [ -e "$HOME/.config/nvim" ] || ln -s "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
 
-exit 0
+# Things to do after installing the dotfiles
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+git clone https://git::@github.com/tmux-plugins/tmux-sensible ~/.config/tmux/plugins/tmux-sensible
+git clone https://git::@github.com/tmux-plugins/tmux-yank ~/.config/tmux/plugins/tmux-yank
+git clone https://git::@github.com/christoomey/vim-tmux-navigator ~/.config/tmux/plugins/vim-tmux-navigator
+git clone https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catpuccin-tmux
 
+exit 0
