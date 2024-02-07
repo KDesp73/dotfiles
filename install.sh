@@ -47,7 +47,7 @@ if [ "$1" = "clean" ]; then
     sudo apt remove nvim -y
     sudo apt remove tmux -y
     sudo apt remove -y fonts-powerline
-    sudo apt autoremove
+    sudo apt autoremove -y
 
     INFO "Cleaned"
     exit 0
