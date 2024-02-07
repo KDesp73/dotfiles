@@ -72,9 +72,11 @@ if [ "$1" = "apps" ]; then
         echo_already_installed "zsh"
     else
         sudo apt install zsh -y
-        chsh -s "$(command -v zsh)" "$USER"
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo_installed "zsh" 
+        chsh -s "$(command -v zsh)" "$USER"
+    fi
+    if [ ! -d "$HOME/.oh-my-zsh" ]; then
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo_installed "oh-my-zsh"
     fi
 
