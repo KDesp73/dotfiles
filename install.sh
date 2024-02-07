@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+
 
 LOG () {
     echo "[$1] $2"
@@ -111,14 +113,17 @@ if [ "$1" = "apps" ]; then
     if command -v nvim > /dev/null 2>&1; then
         echo_already_installed "neovim"
     else
+        # Prerequisites
+        sudo apt-get install ninja-build gettext cmake unzip curl
+
         git clone https://github.com/neovim/neovim "$HOME/neovim"
-        cd "$HOME/neovim" && make CMAKE_BUILD_TYPE=RelWithDebInfo
+        cd "$HOME/neovim" || exit 1
+        make CMAKE_BUILD_TYPE=RelWithDebInfo
         git checkout stable
-        sudo make -y install
-        rm -r build/  # clear the CMake cache
-        make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
-        make install
-        export PATH="$HOME/neovim/bin:$PATH"
+        
+        # For Debian / Ubuntu
+        cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+
         echo_installed "neovim"
     fi
 
@@ -133,16 +138,18 @@ if [ "$1" = "apps" ]; then
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo_installed "oh-my-zsh"
+        rm "$HOME/.zshrc" # Because we will install our own
+        rm "$HOME/.zshrc.pre-oh-my-zsh"
     else 
         echo_already_installed "oh-my-zsh"
-        rm "$HOME/.zshrc" # Because we will install our own
     fi
+
+    cd "$SCRIPT_DIR" || exit 1
 fi
 
-# Symlink dotfiles
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 DEBU "script directory: $SCRIPT_DIR"
 
+# Symlink dotfiles
 [ -e "$HOME/.zshrc" ] || ln -s "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 [ -e "$HOME/.config/nvim" ] || ln -s "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
