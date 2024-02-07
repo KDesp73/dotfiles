@@ -129,6 +129,7 @@ DEBU "script directory: $SCRIPT_DIR"
 [ -e "$HOME/.zshrc" ] || ln -s "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 [ -e "$HOME/.config/nvim" ] || ln -s "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
+INFO "Created links for dotfiles"
 
 # Things to do after installing the dotfiles
 
