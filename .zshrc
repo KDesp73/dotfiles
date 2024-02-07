@@ -126,6 +126,7 @@ alias server="ruby $repos/ruby/Ruby_Web_Server/run.rb"
 alias update="sudo apt update && sudo apt upgrade -y"
 alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
+alias markprev="python3 $repos/python/textual/examples/markdown.py"
 
 # alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
@@ -140,7 +141,7 @@ alias show_cursor="echo \"\\e[?25h\""
 alias hide_cursor="echo \"\\e[?25l\""
 
 source $ZSH/oh-my-zsh.sh
-
-
+# source ~/emsdk/emsdk_env.sh 
+# clear
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
