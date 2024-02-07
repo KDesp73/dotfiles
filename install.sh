@@ -60,17 +60,6 @@ if [ "$1" = "apps" ]; then
         echo_installed "git"
     fi
 
-    # Install cargo
-    if ! command -v cargo > dev/null 2>&1; then
-        curl https://sh.rustup.rs -sSf | sh
-        echo_installed "cargo"
-    fi
-    
-    # Install bob-nvim
-    cargo install bob-nvim
-    bob install v0.10.0
-    echo_installed "neovim"
-
     if ! command -v make > /dev/null 2>&1; then
         sudo apt install -y make
         echo_installed "make"
@@ -123,19 +112,23 @@ if [ "$1" = "apps" ]; then
     fi
 
     # Install Neovim
-    # if command -v nvim > /dev/null 2>&1; then
-    #     echo_already_installed "neovim"
-    # else
-    #     # Prerequisites
-    #     sudo apt-get install ninja-build gettext cmake unzip curl
-    #
-    #     sudo apt install -y software-properties-common
-    #     sudo add-apt-repository -y ppa:neovim-ppa/unstable
-    #     sudo apt update
-    #     sudo apt install -y neovim
-    #
-    #     echo_installed "neovim"
-    # fi
+    if command -v nvim > /dev/null 2>&1; then
+        echo_already_installed "neovim"
+    else
+        # Prerequisites
+        sudo apt-get install ninja-build gettext cmake unzip curl
+
+        git clone https://github.com/neovim/neovim "$HOME/neovim"
+        cd "$HOME/neovim" || exit 1
+        make CMAKE_BUILD_TYPE=RelWithDebInfo
+        git checkout stable
+        rm -r build/  # clear the CMake cache
+        make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+        make install
+        export PATH="$HOME/neovim/bin:$PATH"
+
+        echo_installed "neovim"
+    fi
 
     # Install tmux
     if command -v tmux > /dev/null 2>&1; then
