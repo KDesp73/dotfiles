@@ -132,6 +132,7 @@ if [ "$1" = "apps" ]; then
         echo_already_installed "tmux"
     else
         sudo apt install -y tmux
+        git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
         echo_installed "tmux"
     fi
 
