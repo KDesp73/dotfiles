@@ -37,6 +37,7 @@ fi
 
 if [ "$1" = "clean" ]; then
     rm -rf "$HOME/.zshrc"
+    rm -rf "$HOME/.oh-my-zsh"
     rm -rf "$HOME/.config/nvim"
     rm -rf "$HOME/.config/tmux"
     rm -rf "$HOME/neovim"
@@ -75,9 +76,12 @@ if [ "$1" = "apps" ]; then
         echo_installed "zsh" 
         chsh -s "$(command -v zsh)" "$USER"
     fi
+
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo_installed "oh-my-zsh"
+    else 
+        echo_already_installed "oh-my-zsh"
     fi
 
     # Install go for fzf
@@ -104,7 +108,7 @@ if [ "$1" = "apps" ]; then
         echo_already_installed "neovim"
     else
         git clone https://github.com/neovim/neovim "$HOME/neovim"
-        cd neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
+        cd "$HOME/neovim" && make CMAKE_BUILD_TYPE=RelWithDebInfo
         git checkout stable
         sudo make -y install
         echo_installed "neovim"
@@ -117,6 +121,8 @@ if [ "$1" = "apps" ]; then
         sudo apt install -y tmux
         echo_installed "tmux"
     fi
+
+    exit 0
 fi
 
 # Symlink dotfiles
