@@ -100,7 +100,7 @@ if [ "$1" = "apps" ]; then
     if command -v nvim > /dev/null 2>&1; then
         echo_already_installed "neovim"
     else
-        ./scripts/neovim-installer.sh
+        sh ./scripts/neovim-installer.sh
         echo_installed "neovim"
     fi
 
@@ -108,7 +108,7 @@ if [ "$1" = "apps" ]; then
     if command -v tmux > /dev/null 2>&1; then
         echo_already_installed "tmux"
     else
-        ./scripts/tmux-installer.sh
+        sh ./scripts/tmux-installer.sh
         echo_installed "tmux"
     fi
 
@@ -116,7 +116,7 @@ if [ "$1" = "apps" ]; then
     if command -v zsh > /dev/null 2>&1; then
         echo_already_installed "zsh"
     else
-        ./scripts/zsh-installer.zsh
+        sh ./scripts/zsh-installer.zsh
         echo_installed "zsh" 
     fi
 
@@ -131,6 +131,6 @@ DEBU "script directory: $SCRIPT_DIR"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
 INFO "Created links for dotfiles"
 
-./scripts/font-installer.sh
+sh ./scripts/font-installer.sh
 
 exit 0
