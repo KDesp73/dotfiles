@@ -135,9 +135,8 @@ if [ "$1" = "apps" ]; then
         echo_installed "oh-my-zsh"
     else 
         echo_already_installed "oh-my-zsh"
+        rm "$HOME/.zshrc" # Because we will install our own
     fi
-
-    exit 0
 fi
 
 # Symlink dotfiles
