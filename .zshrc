@@ -110,8 +110,12 @@ export tmuxconf="$HOME/.config/tmux"
 export dotfiles="$repos/misc/dotfiles"
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/
 
 # aliases
+alias emulator="~/Android/Sdk/emulator/emulator"
+alias astudio="nohup /usr/local/android-studio/bin/studio.sh &"
 alias ls="lsd"
 alias la="lsd -a"
 alias ll="lsd -l"
@@ -140,8 +144,16 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 alias show_cursor="echo \"\\e[?25h\""
 alias hide_cursor="echo \"\\e[?25l\""
 
+alias attach="tmux attach-session -t"
 source $ZSH/oh-my-zsh.sh
 # source ~/emsdk/emsdk_env.sh 
 # clear
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

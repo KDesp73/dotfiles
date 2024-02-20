@@ -169,9 +169,8 @@ requires = {
     use "milisims/nvim-luaref"
     use "folke/neodev.nvim"
 
-    use "KDesp73/project-starter.nvim"
-    use "KDesp73/todo-manager.nvim"
-    -- use "/home/konstantinos/personal/repos/lua/plugins/project-starter.nvim"
+    -- use "KDesp73/project-starter.nvim"
+    use "/home/konstantinos/personal/repos/lua/plugins/project-starter.nvim"
     -- use "/home/konstantinos/personal/repos/lua/plugins/todo-manager.nvim"
 
     use "HakonHarnes/img-clip.nvim"

@@ -9,7 +9,7 @@ sudo apt-get install ninja-build gettext cmake unzip curl
 git clone https://github.com/neovim/neovim "$HOME/neovim"
 cd "$HOME/neovim" || exit 1
 git checkout stable
-sudo make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX="$HOME/neovim"
+make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX="$HOME/neovim"
 rm -r build/  # clear the CMake cache
 sudo make install
 export PATH="$HOME/neovim/bin:$PATH"

@@ -1,5 +1,5 @@
-local todo = require("todo-manager")
-
-todo.setup({
-
-})
+-- local todo = require("todo-manager")
+--
+-- todo.setup({
+--
+-- })
