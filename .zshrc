@@ -107,7 +107,7 @@ fi
 export repos="$HOME/personal/repos"
 export neoconf="$HOME/.config/nvim"
 export tmuxconf="$HOME/.config/tmux"
-export dotfiles="~/dotfiles"
+export dotfiles="$HOME/dotfiles"
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk

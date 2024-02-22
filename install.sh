@@ -31,6 +31,24 @@ echo_already_installed() {
     INFO "$1 is already installed"
 }
 
+link(){
+    if [ -e "$1/$2" ]; then
+        ERRO "$2 already exists"
+    else
+        ln -s "$SCRIPT_DIR/$2" "$1/$2"
+        INFO "Linked $2"
+    fi
+}
+
+link_home(){
+    link "$HOME" $1
+}
+
+link_config(){
+    link "$HOME/.config" $1
+}
+
+
 # if ! command -v apt > /dev/null 2>&1; then
 #     WARN "apt not found. Please install: git, fonts-powerline, zsh, tmux manually"
 #     exit 1
@@ -123,13 +141,11 @@ if [ "$1" = "apps" ]; then
     cd "$SCRIPT_DIR" || exit 1
 fi
 
-DEBU "script directory: $SCRIPT_DIR"
-
 # Symlink dotfiles
-[ -e "$HOME/.zshrc" ] || ln -s "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
-[ -e "$HOME/.config/nvim" ] || ln -s "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
-[ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
-[ -e "$HOME/.config/hypr" ] || ln -s "$SCRIPT_DIR/hypr" "$HOME/.config/hypr"
-INFO "Created links for dotfiles"
-
+link_home ".zshrc"
+link_config "nvim"
+link_config "tmux"
+link_config "hypr"
+link_config "rofi"
+link_config "kitty"
 exit 0
