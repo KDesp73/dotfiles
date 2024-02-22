@@ -1,6 +1,6 @@
 local starter = require("project-starter")
 
-local repos = "/home/konstantinos/personal/repos/"
+local repos = "/home/kdesp73/personal/repos/"
 
 local options = starter.setup({
     default_paths = {

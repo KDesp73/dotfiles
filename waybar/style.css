@@ -2,7 +2,7 @@
   border: none;
   border-radius: 0;
   min-height: 0;
-  /* font-family: Material Design Icons, JetBrainsMono Nerd Font; */
+  font-family: Material Design Icons, JetBrainsMono Nerd Font;
   font-size: 13px;
 }
 
@@ -47,8 +47,6 @@ window#waybar.hidden {
   background-color: #f38ba8;
 }
 
-#temperature,
-#cpu,
 #memory,
 #custom-power,
 #battery,
@@ -77,18 +75,9 @@ window#waybar.hidden {
   color: #1793d1;
 }
 
-#temperature {
-  background-color: #fa9887;
-}
-
 #memory {
   background-color: #fab387;
 }
-
-#cpu {
-  background-color: #e387fa;
-}
-
 #battery {
   background-color: #f38ba8;
 }
@@ -128,7 +117,7 @@ window#waybar.hidden {
 }
 
 #clock {
-  /* font-family: JetBrainsMono Nerd Font; */
+  font-family: JetBrainsMono Nerd Font;
   background-color: #cba6f7;
 }
 
@@ -147,4 +136,5 @@ tooltip label {
 padding: 5px;
 background-color: #131822;
 }
+
 

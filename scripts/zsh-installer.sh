@@ -2,7 +2,13 @@
 
 
 
-sudo apt install zsh -y
+if ! command -v apt > /dev/null 2>&1; then
+    sudo apt install -y zsh
+fi
+
+if ! command -v pamac > /dev/null 2>&1; then
+    sudo pamac install zsh
+fi
 chsh -s "$(which zsh)"
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

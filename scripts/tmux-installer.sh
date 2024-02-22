@@ -1,7 +1,14 @@
 #!/bin/bash
 
 
-# sudo apt install -y tmux
+if ! command -v apt > /dev/null 2>&1; then
+    sudo apt install -y tmux
+fi
+
+if ! command -v pamac > /dev/null 2>&1; then
+    sudo pamac install tmux
+fi
+
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 [ -e "$HOME/.config/tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/
