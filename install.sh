@@ -31,10 +31,10 @@ echo_already_installed() {
     INFO "$1 is already installed"
 }
 
-if ! command -v apt > /dev/null 2>&1; then
-    WARN "apt not found. Please install: git, fonts-powerline, zsh, tmux manually"
-    exit 1
-fi
+# if ! command -v apt > /dev/null 2>&1; then
+#     WARN "apt not found. Please install: git, fonts-powerline, zsh, tmux manually"
+#     exit 1
+# fi
 
 
 if [ "$1" = "clean" ]; then
@@ -129,8 +129,7 @@ DEBU "script directory: $SCRIPT_DIR"
 [ -e "$HOME/.zshrc" ] || ln -s "$SCRIPT_DIR/.zshrc" "$HOME/.zshrc"
 [ -e "$HOME/.config/nvim" ] || ln -s "$SCRIPT_DIR/nvim" "$HOME/.config/nvim"
 [ -e "$HOME/.config/tmux" ] || ln -s "$SCRIPT_DIR/tmux" "$HOME/.config/tmux"
+[ -e "$HOME/.config/hypr" ] || ln -s "$SCRIPT_DIR/hypr" "$HOME/.config/hypr"
 INFO "Created links for dotfiles"
-
-sh ./scripts/font-installer.sh
 
 exit 0

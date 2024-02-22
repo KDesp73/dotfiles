@@ -76,7 +76,7 @@ plugins=(
     fzf
 )
 
-export FZF_BASE="$HOME/fzf"
+export FZF_BASE="$HOME/.fzf"
 
 # User configuration
 
@@ -107,7 +107,7 @@ fi
 export repos="$HOME/personal/repos"
 export neoconf="$HOME/.config/nvim"
 export tmuxconf="$HOME/.config/tmux"
-export dotfiles="$repos/misc/dotfiles"
+export dotfiles="~/dotfiles"
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk
