@@ -148,4 +148,6 @@ link_config "tmux"
 link_config "hypr"
 link_config "rofi"
 link_config "kitty"
+link_config "waybar"
+
 exit 0

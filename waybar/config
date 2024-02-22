@@ -69,7 +69,8 @@
         },
         "cpu": {
             "interval": 5,
-            "format": "󰍛 {avg_frequency}GHz  {usage}%"
+            "format": "󰍛 {avg_frequency}GHz  {usage}%",
+            "spacing": 10
         },
         "memory": {
             "interval": 5,
