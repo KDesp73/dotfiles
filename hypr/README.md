@@ -27,6 +27,7 @@
 | SUPER+X | Launch Power Menu |
 | SUPER+R | Search and Run Applications |
 | SUPER+Z | Fuzzy Find Files |
+| SUPER+Z | Fuzzy Find Bluetooth |
 | SUPER+V | Fuzzy Find Clipboard |
 | SUPER+W | Fuzzy Find Wifi Networks |
 

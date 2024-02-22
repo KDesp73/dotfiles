@@ -115,7 +115,7 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID
 
 # aliases
 alias emulator="~/Android/Sdk/emulator/emulator"
-alias astudio="nohup /usr/local/android-studio/bin/studio.sh &"
+alias astudio="nohup flatpak run com.google.AndroidStudio &"
 alias ls="lsd"
 alias la="lsd -a"
 alias ll="lsd -l"
@@ -131,6 +131,7 @@ alias update="sudo apt update && sudo apt upgrade -y"
 alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
 alias markprev="python3 $repos/python/textual/examples/markdown.py"
+alias 0ad="nohup flatpak run com.play0ad.zeroad &"
 
 # alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
