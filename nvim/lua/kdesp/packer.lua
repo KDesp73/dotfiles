@@ -188,4 +188,11 @@ requires = {
     --         'nvim-lua/plenary.nvim',
     --     },
     -- }
+
+    use {
+		"theRealCarneiro/hyprland-vim-syntax",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = "hypr",
+	}
+
 end)

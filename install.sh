@@ -149,5 +149,7 @@ link_config "hypr"
 link_config "rofi"
 link_config "kitty"
 link_config "waybar"
+link_config "dunst"
+link_config "ags"
 
 exit 0

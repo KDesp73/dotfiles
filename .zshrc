@@ -100,6 +100,7 @@ export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/
+export PATH=${PATH}:"$HOME/.cargo/bin"
 
 # aliases
 alias emulator="~/Android/Sdk/emulator/emulator"
