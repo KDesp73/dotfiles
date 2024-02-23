@@ -5,7 +5,7 @@ local map = vim.keymap.set
 
 map("n", "<leader>e", vim.cmd.Ex)
 map("n", "<leader>ε", vim.cmd.Ex)
-
+map({"n", "v"}, "y", "\"+y", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>sx", ":w<CR>:source %<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "<leader>fh", ":Telescope help_tags<CR>", {silent = true})
 vim.api.nvim_set_keymap("n", "<C-s>", ":w!<CR>", { noremap = true, silent = true })

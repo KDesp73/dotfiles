@@ -92,18 +92,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 export repos="$HOME/personal/repos"
 export neoconf="$HOME/.config/nvim"
 export tmuxconf="$HOME/.config/tmux"
@@ -126,7 +114,7 @@ alias nv=nvim
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias python=python3
 alias beep='paplay $BEEP'
-alias server="ruby $repos/ruby/Ruby_Web_Server/run.rb"
+alias server="ruby $repos/ruby/Ruby-Web-Server/run.rb"
 alias update="sudo apt update && sudo apt upgrade -y"
 alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
