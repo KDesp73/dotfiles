@@ -9,6 +9,7 @@
 | Key Bind | Functionality |
 |---------------|----------|
 | SUPER+Enter | Start Kitty |
+| SUPER+H | Open Home Page |
 | Ctrl+Alt+T | Start Floating Kitty |
 | SUPER+Q | Kill Focused Window |
 | SUPER+F11 | Full Screen | 
