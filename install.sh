@@ -143,6 +143,7 @@ fi
 
 # Symlink dotfiles
 link_home ".zshrc"
+link_home ".gitconfig"
 link_config "nvim"
 link_config "tmux"
 link_config "hypr"
@@ -150,6 +151,5 @@ link_config "rofi"
 link_config "kitty"
 link_config "waybar"
 link_config "dunst"
-link_config "ags"
 
 exit 0
