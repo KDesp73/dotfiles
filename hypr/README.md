@@ -39,7 +39,6 @@
 | Shift+PrtSc | Screenshot Region |
 | PrtSc | Screenshot Whole Screen |
 
-
 ### Power
 
 | Key Bind | Functionality |

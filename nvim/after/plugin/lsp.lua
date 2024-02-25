@@ -32,7 +32,7 @@ lsp.ensure_installed({
     -- 'pylint',
     'pyright',
     'pylsp',
-    -- 'r_language_server',
+    'r_language_server',
     'rubocop',
     'ruby_ls',
     -- 'rubyfmt',

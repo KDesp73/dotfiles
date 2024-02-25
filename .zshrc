@@ -99,13 +99,12 @@ export dotfiles="$HOME/dotfiles"
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/
+export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/:$HOME/.var/app/com.google.AndroidStudio/config/.android/avd
 export PATH=${PATH}:"$HOME/.cargo/bin"
 
 # aliases
 alias emulator="~/Android/Sdk/emulator/emulator"
-alias astudio="nohup flatpak run com.google.AndroidStudio &"
-alias ls="lsd"
+alias astudio="nohup /usr/local/android-studio/bin/studio.sh &"
 alias la="lsd -a"
 alias ll="lsd -l"
 alias lla="lsd -la"
@@ -116,7 +115,7 @@ alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias python=python3
 alias beep='paplay $BEEP'
 alias server="ruby $repos/ruby/Ruby-Web-Server/run.rb"
-alias update="sudo apt update && sudo apt upgrade -y"
+alias update="pamac update && pamac upgrade"
 alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
 alias markprev="python3 $repos/python/textual/examples/markdown.py"
