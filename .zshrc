@@ -101,6 +101,7 @@ export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/:$HOME/.var/app/com.google.AndroidStudio/config/.android/avd
 export PATH=${PATH}:"$HOME/.cargo/bin"
+export PATH=${PATH}:"/usr/local/android-studio/bin"
 
 # aliases
 alias emulator="~/Android/Sdk/emulator/emulator"
@@ -129,6 +130,7 @@ alias exti=exit
 alias ezit=exit
 alias ezti=exit
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
 
 alias show_cursor="echo \"\\e[?25h\""
 alias hide_cursor="echo \"\\e[?25l\""

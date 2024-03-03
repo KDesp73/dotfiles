@@ -60,6 +60,7 @@ window#waybar.hidden {
 
 #memory,
 #custom-power,
+#custom-lang,
 #battery,
 #backlight,
 #pulseaudio,
@@ -110,6 +111,7 @@ window#waybar.hidden {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
+
 #battery.charging {
     background-color: @macchiato-green;
 }

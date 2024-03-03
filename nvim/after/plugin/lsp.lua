@@ -19,6 +19,7 @@ lsp.ensure_installed({
     'emmet_ls',
     'eslint',
     'grammarly',
+    'gradle_ls',
     'html',
     -- 'java-debug-adapter',
     -- 'java-test',
@@ -57,7 +58,7 @@ lsp.setup_nvim_cmp({
 })
 
 lsp.on_attach(function(client, bufnr)
-    local opts = {buffer = bufnr, remap = false} 
+    local opts = {buffer = bufnr, remap = false}
     
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opt)
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opt)
@@ -72,3 +73,5 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 lsp.setup()
+
+require'lspconfig'.kotlin_language_server.setup{}
