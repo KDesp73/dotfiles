@@ -3,3 +3,7 @@
 	name = Konstantinos Despoinidis
 [init]
 	defaultBranch = main
+[core]
+	editor = nvim
+[merge]
+	tool = kdiff3

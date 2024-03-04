@@ -50,15 +50,16 @@ link_config(){
 
 if [ "$1" = "clean" ]; then
     rm -rf "$HOME/fzf"
-    rm -rf "$HOME/.zshrc"
     rm -rf "$HOME/.oh-my-zsh"
+    rm -rf "$HOME/.zshrc"
+    rm -rf "$HOME/.gitconfig"
     rm -rf "$HOME/.config/nvim"
     rm -rf "$HOME/.config/tmux"
-    rm -rf "$HOME/neovim"
-    sudo apt remove nvim -y
-    sudo apt remove tmux -y
-    sudo apt remove -y fonts-powerline
-    sudo apt autoremove -y
+    rm -rf "$HOME/.config/hypr"
+    rm -rf "$HOME/.config/rofi"
+    rm -rf "$HOME/.config/kitty"
+    rm -rf "$HOME/.config/waybar"
+    rm -rf "$HOME/.config/dunst"
 
     INFO "Cleaned"
     exit 0
@@ -66,6 +67,7 @@ fi
 
 if [ "$1" = "apps" ]; then
     ./scripts/apps-installer.sh
+    exit 0
 fi
 
 # Symlink dotfiles

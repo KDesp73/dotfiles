@@ -173,8 +173,6 @@ requires = {
     -- use "/home/konstantinos/personal/repos/lua/plugins/project-starter.nvim"
     -- use "/home/konstantinos/personal/repos/lua/plugins/todo-manager.nvim"
 
-    use "HakonHarnes/img-clip.nvim"
-
     use({
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
@@ -195,4 +193,5 @@ requires = {
 		ft = "hypr",
 	}
 
+    use 'norcalli/nvim-colorizer.lua'
 end)
