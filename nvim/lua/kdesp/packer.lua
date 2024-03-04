@@ -36,54 +36,54 @@ return require('packer').startup(function(use)
             -- LSP Support
             { 'neovim/nvim-lspconfig' }, -- Required
             {                            -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
+
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' }, -- Required
+        }
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
         },
-        { 'williamboman/mason-lspconfig.nvim' }, -- Optional
-
-        -- Autocompletion
-        { 'hrsh7th/nvim-cmp' }, -- Required
-        { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-        { 'L3MON4D3/LuaSnip' }, -- Required
     }
-}
 
-use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-        'nvim-tree/nvim-web-devicons', -- optional
-    },
-}
+    -- use {
+    --     'romgrk/barbar.nvim',
+    --     requires = { 'kyazdani42/nvim-web-devicons' }
+    -- }
 
-use {
-    'romgrk/barbar.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' }
-}
-
--- Debugger
--- 
-use('mfussenegger/nvim-dap')
-use('theHamsta/nvim-dap-virtual-text')
-use('nvim-telescope/telescope-dap.nvim')
-use('rcarriga/cmp-dap')
-use {
-    "rcarriga/nvim-dap-ui",
-    requires = { "mfussenegger/nvim-dap" }
-}
+    -- Debugger
+    -- 
+    -- use('mfussenegger/nvim-dap')
+    -- use('theHamsta/nvim-dap-virtual-text')
+    -- use('nvim-telescope/telescope-dap.nvim')
+    -- use('rcarriga/cmp-dap')
+    -- use {
+    --     "rcarriga/nvim-dap-ui",
+    --     requires = { "mfussenegger/nvim-dap" }
+    -- }
 
 
 
-use('sophacles/vim-processing')
+    -- use('sophacles/vim-processing')
 
-use { -- needs configuring
-"ThePrimeagen/refactoring.nvim",
-requires = {
-    { "nvim-lua/plenary.nvim" },
-    { "nvim-treesitter/nvim-treesitter" }
-}
-    }
+    -- use { -- needs configuring
+    --     "ThePrimeagen/refactoring.nvim",
+    --     requires = {
+    --         { "nvim-lua/plenary.nvim" },
+    --         { "nvim-treesitter/nvim-treesitter" }
+    --     }
+    -- }
 
     use {
         "folke/which-key.nvim",
@@ -120,43 +120,40 @@ requires = {
         end
     }
 
-    -- use('jose-elias-alvarez/null-ls.nvim')
-    -- use('elentok/format-on-save.nvim')
+    -- use('sbdchd/neoformat')
 
-    use('sbdchd/neoformat')
-
-    use {
-        'jay-babu/mason-nvim-dap.nvim',
-        requires = {
-            { "williamboman/mason.nvim" },
-            { "mfussenegger/nvim-dap" }
-        }
-    }
+    -- use {
+    --     'jay-babu/mason-nvim-dap.nvim',
+    --     requires = {
+    --         { "williamboman/mason.nvim" },
+    --         { "mfussenegger/nvim-dap" }
+    --     }
+    -- }
 
     use('editorconfig/editorconfig-vim')
 
-    use('Microsoft/vscode-cpptools')
+    -- use('Microsoft/vscode-cpptools')
 
-    use {
-        "nvim-neorg/neorg",
-        config = function()
-            require("neorg").setup {
-                load = {
-                    ["core.defaults"] = {},
-                    ["core.concealer"] = {},
-                    ["core.dirman"] = {
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                        },
-                    },
-                },
-            }
-        end,
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
-    }
+    -- use {
+    --     "nvim-neorg/neorg",
+    --     config = function()
+    --         require("neorg").setup {
+    --             load = {
+    --                 ["core.defaults"] = {},
+    --                 ["core.concealer"] = {},
+    --                 ["core.dirman"] = {
+    --                     config = {
+    --                         workspaces = {
+    --                             notes = "~/notes",
+    --                         },
+    --                     },
+    --                 },
+    --             },
+    --         }
+    --     end,
+    --     run = ":Neorg sync-parsers",
+    --     requires = "nvim-lua/plenary.nvim",
+    -- }
 
     -- use ('rcarriga/nvim-notify')
 
@@ -180,18 +177,12 @@ requires = {
 
     use "folke/todo-comments.nvim"
 
-    -- use {
-    --     'akinsho/flutter-tools.nvim',
-    --     requires = {
-    --         'nvim-lua/plenary.nvim',
-    --     },
-    -- }
 
     use {
-		"theRealCarneiro/hyprland-vim-syntax",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		ft = "hypr",
-	}
+        "theRealCarneiro/hyprland-vim-syntax",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        ft = "hypr",
+    }
 
     use 'norcalli/nvim-colorizer.lua'
 end)

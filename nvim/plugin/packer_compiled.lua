@@ -90,21 +90,11 @@ _G.packer_plugins = {
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/Nvim-R",
     url = "https://github.com/jalvesaq/Nvim-R"
   },
-  ["barbar.nvim"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/barbar.nvim",
-    url = "https://github.com/romgrk/barbar.nvim"
-  },
   catppuccin = {
     config = { "\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0" },
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/catppuccin",
     url = "https://github.com/catppuccin/nvim"
-  },
-  ["cmp-dap"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/cmp-dap",
-    url = "https://github.com/rcarriga/cmp-dap"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -129,7 +119,7 @@ _G.packer_plugins = {
     url = "https://github.com/theRealCarneiro/hyprland-vim-syntax"
   },
   ["indent-blankline.nvim"] = {
-    config = { "\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2#show_trailing_blankline_indent\1\tchar\b┊\nsetup\21indent_blankline\frequire\0" },
+    config = { "\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\tchar\b┊#show_trailing_blankline_indent\1\nsetup\21indent_blankline\frequire\0" },
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
@@ -155,11 +145,6 @@ _G.packer_plugins = {
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
     url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
-  ["mason-nvim-dap.nvim"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/mason-nvim-dap.nvim",
-    url = "https://github.com/jay-babu/mason-nvim-dap.nvim"
-  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/mason.nvim",
@@ -170,17 +155,6 @@ _G.packer_plugins = {
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/neodev.nvim",
     url = "https://github.com/folke/neodev.nvim"
   },
-  neoformat = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/neoformat",
-    url = "https://github.com/sbdchd/neoformat"
-  },
-  neorg = {
-    config = { "\27LJ\2\n�\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0" },
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/neorg",
-    url = "https://github.com/nvim-neorg/neorg"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/nvim-cmp",
@@ -190,21 +164,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
-  },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
-  },
-  ["nvim-dap-virtual-text"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/nvim-dap-virtual-text",
-    url = "https://github.com/theHamsta/nvim-dap-virtual-text"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -251,16 +210,6 @@ _G.packer_plugins = {
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/project-starter.nvim",
     url = "https://github.com/KDesp73/project-starter.nvim"
   },
-  ["refactoring.nvim"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/refactoring.nvim",
-    url = "https://github.com/ThePrimeagen/refactoring.nvim"
-  },
-  ["telescope-dap.nvim"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
-    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
-  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/telescope.nvim",
@@ -286,20 +235,10 @@ _G.packer_plugins = {
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/vim-fugitive",
     url = "https://github.com/tpope/vim-fugitive"
   },
-  ["vim-processing"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/vim-processing",
-    url = "https://github.com/sophacles/vim-processing"
-  },
   ["vim-svelte"] = {
     loaded = true,
     path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/vim-svelte",
     url = "https://github.com/evanleck/vim-svelte"
-  },
-  ["vscode-cpptools"] = {
-    loaded = true,
-    path = "/home/kdesp73/.local/share/nvim/site/pack/packer/start/vscode-cpptools",
-    url = "https://github.com/Microsoft/vscode-cpptools"
   },
   ["which-key.nvim"] = {
     config = { "\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0" },
@@ -310,30 +249,26 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
--- Config for: neorg
-time([[Config for neorg]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\a\0\14\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\f\0005\3\3\0004\4\0\0=\4\4\0034\4\0\0=\4\5\0035\4\t\0005\5\a\0005\6\6\0=\6\b\5=\5\n\4=\4\v\3=\3\r\2B\0\2\1K\0\1\0\tload\1\0\0\16core.dirman\vconfig\1\0\0\15workspaces\1\0\0\1\0\1\nnotes\f~/notes\19core.concealer\18core.defaults\1\0\0\nsetup\nneorg\frequire\0", "config", "neorg")
-time([[Config for neorg]], false)
--- Config for: catppuccin
-time([[Config for catppuccin]], true)
-try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0", "config", "catppuccin")
-time([[Config for catppuccin]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: indent-blankline.nvim
+time([[Config for indent-blankline.nvim]], true)
+try_loadstring("\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\tchar\b┊#show_trailing_blankline_indent\1\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
+time([[Config for indent-blankline.nvim]], false)
 -- Config for: which-key.nvim
 time([[Config for which-key.nvim]], true)
 try_loadstring("\27LJ\2\nt\0\0\3\0\a\0\0156\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\0\0009\0\1\0)\1,\1=\1\3\0006\0\4\0'\2\5\0B\0\2\0029\0\6\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14which-key\frequire\15timeoutlen\ftimeout\6o\bvim\0", "config", "which-key.nvim")
 time([[Config for which-key.nvim]], false)
--- Config for: indent-blankline.nvim
-time([[Config for indent-blankline.nvim]], true)
-try_loadstring("\27LJ\2\nn\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2#show_trailing_blankline_indent\1\tchar\b┊\nsetup\21indent_blankline\frequire\0", "config", "indent-blankline.nvim")
-time([[Config for indent-blankline.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
+-- Config for: catppuccin
+time([[Config for catppuccin]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\27colorscheme catppuccin\bcmd\bvim\0", "config", "catppuccin")
+time([[Config for catppuccin]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
