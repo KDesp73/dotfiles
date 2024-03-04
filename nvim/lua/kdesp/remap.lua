@@ -19,11 +19,11 @@ vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true }
 vim.api.nvim_set_keymap('v', '<C-c>', '<Esc>', { noremap = true, silent = true })
 
 -- Remap Esc to vim.cmd.BufferClose
-vim.api.nvim_set_keymap('n', '<Esc>', ':lua vim.cmd("BufferClose")<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<Esc>', ':q<CR>', { noremap = true, silent = true })
 -- delete text but don't copy to clipboard
-map({ "n", "v" }, "<leader>d", [["_d]])
+map({ "n", "v" }, "<leader>d", "\"_d")
 -- paste text but DONT copy the overridden text
-map("x", "p", [["_dP]])
+map("x", "p", "\"_dP")
 
 -- Quit
 map("n", "<leader>qw", ":qw<CR>", { desc = "Save & quit" })
