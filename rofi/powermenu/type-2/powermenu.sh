@@ -90,10 +90,24 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		swaylock
-        ;;
+        swaylock \
+            --screenshots \
+            --clock \
+            --indicator \
+            --indicator-radius 100 \
+            --indicator-thickness 7 \
+            --effect-blur 7x5 \
+            --effect-vignette 0.5:0.5 \
+            --ring-color 181926 \
+            --text-color cad3ff \
+            --key-hl-color a6da95 \
+            --line-color 00000000 \
+            --inside-color 00000088 \
+            --separator-color 00000000 \
+            --grace 2 \
+            --fade-in 0.2;;
     $suspend)
-		run_cmd --suspend
+        run_cmd --suspend
         ;;
     $logout)
 		run_cmd --logout
