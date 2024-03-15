@@ -23,8 +23,11 @@ return require('packer').startup(function(use)
     use('nvim-treesitter/playground')
 
     use("nvim-lua/plenary.nvim")
-    use("ThePrimeagen/harpoon")
-
+    use {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    }
     use("mbbill/undotree")
     use("tpope/vim-fugitive")
 
@@ -183,4 +186,5 @@ return require('packer').startup(function(use)
     use 'norcalli/nvim-colorizer.lua'
 
     use('sophacles/vim-processing')
+
 end)
