@@ -74,9 +74,6 @@ return require('packer').startup(function(use)
     -- }
 
 
-
-    -- use('sophacles/vim-processing')
-
     -- use { -- needs configuring
     --     "ThePrimeagen/refactoring.nvim",
     --     requires = {
@@ -167,8 +164,7 @@ return require('packer').startup(function(use)
     use "folke/neodev.nvim"
 
     use "KDesp73/project-starter.nvim"
-    -- use "/home/konstantinos/personal/repos/lua/plugins/project-starter.nvim"
-    -- use "/home/konstantinos/personal/repos/lua/plugins/todo-manager.nvim"
+    -- use "/home/kdesp73/personal/repos/lua/plugins/project-starter.nvim"
 
     use({
         "iamcco/markdown-preview.nvim",
@@ -185,4 +181,6 @@ return require('packer').startup(function(use)
     }
 
     use 'norcalli/nvim-colorizer.lua'
+
+    use('sophacles/vim-processing')
 end)

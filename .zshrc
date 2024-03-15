@@ -121,6 +121,7 @@ alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
 alias markprev="python3 $repos/python/textual/examples/markdown.py"
 alias 0ad="nohup flatpak run com.play0ad.zeroad &"
+alias open="xdg-open"
 
 # alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
