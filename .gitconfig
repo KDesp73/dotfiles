@@ -7,3 +7,5 @@
 	editor = nvim
 [merge]
 	tool = kdiff3
+[pull]
+	rebase = false
