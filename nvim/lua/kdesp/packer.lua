@@ -187,4 +187,5 @@ return require('packer').startup(function(use)
 
     use('sophacles/vim-processing')
 
+    use 'nvim-treesitter/nvim-treesitter-context'
 end)
