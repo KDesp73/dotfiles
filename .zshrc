@@ -96,14 +96,14 @@ export repos="$HOME/personal/repos"
 export neoconf="$HOME/.config/nvim"
 export tmuxconf="$HOME/.config/tmux"
 export dotfiles="$HOME/dotfiles"
-export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk
 
+export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export PATH=${PATH}:"$HOME/.cargo/bin"
-export PATH=${PATH}:"/usr/local/android-studio/bin"
 export PATH=${PATH}:"$repos/misc/Files/shell-scripts/"
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/:$HOME/.var/app/com.google.AndroidStudio/config/.android/avd
+export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin/
 
 # aliases
 alias emulator="~/Android/Sdk/emulator/emulator"
@@ -123,7 +123,7 @@ alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
 alias markprev="python3 $repos/python/textual/examples/markdown.py"
 alias 0ad="nohup flatpak run com.play0ad.zeroad &"
-alias open="xdg-open"
+alias open="nohup xdg-open&"
 
 # alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
