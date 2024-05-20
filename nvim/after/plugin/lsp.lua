@@ -35,7 +35,7 @@ lsp.ensure_installed({
     'pylsp',
     'r_language_server',
     'rubocop',
-    'ruby_ls',
+    -- 'ruby_ls',
     -- 'rubyfmt',
     'rust_analyzer',
     -- 'shellcheck',

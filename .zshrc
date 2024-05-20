@@ -101,7 +101,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export PATH=${PATH}:"$HOME/.cargo/bin"
-export PATH=${PATH}:"$repos/misc/Files/shell-scripts/"
+export PATH=${PATH}:"$repos/bash/"
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/:$HOME/.var/app/com.google.AndroidStudio/config/.android/avd
 export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin/
 
@@ -124,21 +124,18 @@ alias notes="nv ~/notes"
 alias markprev="python3 $repos/python/textual/examples/markdown.py"
 alias 0ad="nohup flatpak run com.play0ad.zeroad &"
 alias open="nohup xdg-open&"
-
 # alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
 alias gitlog="git log --oneline | fzf --preview 'git show --name-only {1}'" 
-
 alias exti=exit
 alias ezit=exit
 alias ezti=exit
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
-
-
 alias show_cursor="echo \"\\e[?25h\""
 alias hide_cursor="echo \"\\e[?25l\""
-
 alias attach="tmux attach-session -t"
+alias gut=git
+
 source $ZSH/oh-my-zsh.sh
 # source ~/emsdk/emsdk_env.sh 
 # clear
