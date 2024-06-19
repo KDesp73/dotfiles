@@ -106,6 +106,11 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID
 export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin/
 
 # aliases
+
+# -a for file
+# -P for target path
+alias ytdl="yt-dlp -qx --audio-format mp3 --audio-quality 0 --no-playlist"
+
 alias emulator="~/Android/Sdk/emulator/emulator"
 alias astudio="nohup /usr/local/android-studio/bin/studio.sh &"
 alias la="lsd -a"
@@ -117,7 +122,7 @@ alias nv=nvim
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias python=python3
 alias beep='paplay $BEEP'
-alias server="ruby $repos/ruby/Ruby-Web-Server/run.rb"
+alias server="$repos/ruby/Ruby-Web-Server/server.rb"
 alias update="pamac update && pamac upgrade"
 alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
