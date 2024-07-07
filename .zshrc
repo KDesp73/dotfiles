@@ -105,6 +105,8 @@ export PATH=${PATH}:"$repos/bash/"
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/:$HOME/.var/app/com.google.AndroidStudio/config/.android/avd
 export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin/
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/webc
+
 # aliases
 
 # -a for file

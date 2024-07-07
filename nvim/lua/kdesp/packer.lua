@@ -168,9 +168,8 @@ return require('packer').startup(function(use)
 
     use {
         "KDesp73/project-starter.nvim",
-        branch = 'dev'
     }
-    -- use "/home/kdesp73/personal/repos/lua/plugins/project-starter.nvim"
+    -- use /home/kdesp73/personal/repos/lua/plugins/project-starter.nvim"
 
     use({
         "iamcco/markdown-preview.nvim",
@@ -201,4 +200,6 @@ return require('packer').startup(function(use)
     })
 
     use 'ray-x/go.nvim'
+
+    use "OXY2DEV/markview.nvim"
 end)
