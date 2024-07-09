@@ -73,6 +73,7 @@ fi
 # Symlink dotfiles
 link_home ".zshrc"
 link_home ".gitconfig"
+link_home ".gdbinit"
 link_config "nvim"
 link_config "tmux"
 link_config "hypr"

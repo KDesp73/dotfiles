@@ -201,5 +201,5 @@ return require('packer').startup(function(use)
 
     use 'ray-x/go.nvim'
 
-    use "OXY2DEV/markview.nvim"
+    -- use "OXY2DEV/markview.nvim"
 end)
