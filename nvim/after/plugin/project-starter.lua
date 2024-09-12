@@ -12,7 +12,8 @@ local options = starter.setup({
         ruby = repos .. "ruby/",
         android = repos .. "android/",
         esp32 = repos .. "esp32/",
-        go = repos .. "go/"
+        go = repos .. "go/",
+        asm = repos .. "asm/x86/"
     },
     cd = true, -- change project directory after creation
     jdk_app_package_name = "io.github.kdesp73"

@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
-
-cd $HOME
-
-git clone https://github.com/davatorium/rofi.git
-
-meson setup build
-
-if [ $? -ne 0 ]; then
-    exit 1
-fi
+source ./utils/logging.sh
 
 
-ninja -C build install
+rofi_installer() {
+    cd "$HOME" || exit 1
+
+    git clone https://github.com/davatorium/rofi.git
+
+    if ! meson setup build; then
+        exit 1
+    fi
+
+    ninja -C build install
+
+    echo_installed "rofi"
+}
+

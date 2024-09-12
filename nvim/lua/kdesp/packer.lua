@@ -166,10 +166,8 @@ return require('packer').startup(function(use)
     use "milisims/nvim-luaref"
     use "folke/neodev.nvim"
 
-    use {
-        "KDesp73/project-starter.nvim",
-    }
-    -- use /home/kdesp73/personal/repos/lua/plugins/project-starter.nvim"
+    -- use {"KDesp73/project-starter.nvim"}
+    use "/home/kdesp73/personal/repos/lua/plugins/project-starter.nvim"
 
     use({
         "iamcco/markdown-preview.nvim",
