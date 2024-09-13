@@ -36,22 +36,31 @@ source lib/execute.sh
 # VVV Edit below VVV
 
 pkgs=(
-    git
     make
     cmake
     vim
-    # more...
+    swaylock-effects
+    swaybg
+    swayidle
 )
 
 scripts=(
-    ./scripts/example.sh
-    # more...
+    ./scripts/neovim-installer.sh
+    ./scripts/rofi-installer.sh
+    ./scripts/tmux-installer.sh
+    ./scripts/zsh-installer.sh
 )
 
-# links[<src>]=<dest>
 links[".zshrc"]="$HOME"
+links[".gitconfig"]="$HOME"
+links[".gdbinit"]="$HOME"
 links["nvim"]="$CONFIG"
-# more...
+links["tmux"]="$CONFIG"
+links["hypr"]="$CONFIG"
+links["rofi"]="$CONFIG"
+links["kitty"]="$CONFIG"
+links["waybar"]="$CONFIG"
+links["dunst"]="$CONFIG"
 
 execute pkgs scripts links "$@"
 
