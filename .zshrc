@@ -101,7 +101,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export PATH=${PATH}:"$HOME/.cargo/bin"
-export PATH=${PATH}:"$repos/bash/"
+export PATH=${PATH}:"$repos/bash/scripts"
 export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/build-tools/26.0.0-preview/:$HOME/.var/app/com.google.AndroidStudio/config/.android/avd
 export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin/
 export PATH=${PATH}:"$HOME/.local/bin"

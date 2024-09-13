@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+
+source "$BASE_DIR"/lib/ansi.sh
+
 get_distro() {
     if [ -f /etc/os-release ]; then
         . /etc/os-release
@@ -43,18 +46,27 @@ get_installation_command() {
     echo "$INSTALLATION_COMMAND"
 }
 
-source ./scripts/utils/ansi.sh
-
-get_package() {
-    local DISTRO
-    local INSTALLATION_COMMAND
-    DISTRO=$(get_distro)
-    INSTALLATION_COMMAND=$(get_installation_command "$DISTRO")
-    color blue "$INSTALLATION_COMMAND $1"
-    if ! command -v "$1"> /dev/null 2>&1; then
-        $INSTALLATION_COMMAND "$1"
-        echo_installed "$1"
-    else 
-        echo_already_installed "$1"
-    fi
+get_uninstallation_command() {
+    local DISTRO=$1
+    case $DISTRO in
+        ubuntu|debian|linuxmint)
+            UNINSTALLATION_COMMAND="apt-get remove -y"
+            ;;
+        fedora|centos|rhel)
+            UNINSTALLATION_COMMAND="yum remove -y"
+            ;;
+        arch)
+            UNINSTALLATION_COMMAND="pacman -Rs --noconfirm"
+            ;;
+        manjaro)
+            UNINSTALLATION_COMMAND="pamac remove --no-confirm"
+            ;;
+        gentoo)
+            UNINSTALLATION_COMMAND="emerge --unmerge --ask"
+            ;;
+        *)
+            UNINSTALLATION_COMMAND="unknown"
+            ;;
+    esac
+    echo "$UNINSTALLATION_COMMAND"
 }
