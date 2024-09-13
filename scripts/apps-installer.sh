@@ -43,8 +43,3 @@ apps() {
         echo_installed "zsh" 
     fi
 }
-
-
-if [ -x "$0" ]; then
-    apps
-fi
