@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-source ./utils/system.sh
-source ./utils/logging.sh
+source ./scripts/utils/system.sh
+source ./scripts/utils/logging.sh
 
 tmux_installer() {
-    install tmux
+    get_package tmux
 
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 

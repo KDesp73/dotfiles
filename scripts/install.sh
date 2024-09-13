@@ -68,9 +68,9 @@ while [[ $# -gt 0 ]]; do
             link_all
             exit 0
             ;;
-        *)
-            link_all
+        --all|*)
             apps
+            link_all
             ;;
     esac
 done

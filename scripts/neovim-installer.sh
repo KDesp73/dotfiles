@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-source ./utils/logging.sh
-source ./utils/system.sh
+source ./scripts/utils/logging.sh
+source ./scripts/utils/system.sh
 
 DISTRO=$(get_distro)
 INSTALLATION_COMMAND=$(get_installation_command "$DISTRO")

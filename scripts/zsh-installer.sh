@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 
-source ./utils/logging.sh
-source ./utils/system.sh
+source ./scripts/utils/logging.sh
+source ./scripts/utils/system.sh
 
 zsh_installer() {
-    install zsh
+    get_package zsh
 
     chsh -s "$(which zsh)"
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ./utils/logging.sh
+source ./scripts/utils/logging.sh
 
 
 rofi_installer() {

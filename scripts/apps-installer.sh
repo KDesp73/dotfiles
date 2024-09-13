@@ -1,17 +1,17 @@
 #!/bin/bash
 
-source ./utils/system.sh
-source ./neovim-installer.sh
-source ./rofi-installer.sh
-source ./tmux-installer.sh
-source ./zsh-installer.sh
+source ./scripts/utils/system.sh
+source ./scripts/neovim-installer.sh
+source ./scripts/rofi-installer.sh
+source ./scripts/tmux-installer.sh
+source ./scripts/zsh-installer.sh
 
 deps() {
-    install git
-    install make
-    install cmake
-    install fonts-powerline
-    install go
+    get_package git
+    get_package make
+    get_package cmake
+    get_package fonts-powerline
+    get_package go
 }
 
 apps() {
