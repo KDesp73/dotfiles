@@ -31,7 +31,7 @@ get_installation_command() {
             INSTALLATION_COMMAND="pacman -S --noconfirm"
             ;;
         manjaro)
-            INSTALLATION_COMMAND="pamac install"
+            INSTALLATION_COMMAND="pamac install --no-confirm --no-upgrade"
             ;;
         gentoo)
             INSTALLATION_COMMAND="emerge --ask"
