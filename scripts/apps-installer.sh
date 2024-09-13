@@ -6,15 +6,14 @@ source ./scripts/rofi-installer.sh
 source ./scripts/tmux-installer.sh
 source ./scripts/zsh-installer.sh
 
-deps() {
+apps() {
     get_package git
     get_package make
     get_package cmake
     get_package fonts-powerline
     get_package go
-}
+    get_package vim
 
-apps() {
     if [ ! -d "$HOME/fzf" ]; then
         git clone https://github.com/junegunn/fzf.git "$HOME/fzf"
         cd "$HOME/fzf" && ./install
@@ -46,23 +45,6 @@ apps() {
 }
 
 
-while [[ $# -gt 0 ]]; do
-    key="$1"
-    case $key in
-        --deps)
-            deps
-            exit 0
-            ;;
-        --apps)
-            apps
-            exit 0
-            ;;
-        --all|*)
-            deps
-            apps
-            shift
-            ;;
-    esac
-done
+apps
 
 exit 0
