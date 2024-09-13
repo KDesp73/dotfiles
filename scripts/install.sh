@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 
-source ./utils/logging.sh
+source ./scripts/utils/logging.sh
 
 link(){
     if [ -e "$1/$2" ]; then
