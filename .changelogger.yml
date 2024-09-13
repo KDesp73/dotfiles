@@ -1,0 +1,7 @@
+# ~/.config/.changelogger.yml
+
+editor: nvim 
+always-export: true
+always-push: false
+release-warning-message: "Remember to update the version and commit everything important!"
+# config-path: /path/to/another/config/to/be/used
