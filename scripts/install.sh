@@ -3,6 +3,7 @@
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 
 source ./scripts/utils/logging.sh
+source ./scripts/apps-installer.sh
 
 link(){
     if [ -e "$1/$2" ]; then
@@ -26,6 +27,7 @@ clean (){
     rm -rf "$HOME/.oh-my-zsh"
     rm -rf "$HOME/.zshrc"
     rm -rf "$HOME/.gitconfig"
+    rm -rf "$HOME/.gdbinit"
     rm -rf "$HOME/.config/nvim"
     rm -rf "$HOME/.config/tmux"
     rm -rf "$HOME/.config/hypr"

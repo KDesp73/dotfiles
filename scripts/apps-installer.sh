@@ -45,6 +45,6 @@ apps() {
 }
 
 
-apps
-
-exit 0
+if [ -x "$0" ]; then
+    apps
+fi
