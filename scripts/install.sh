@@ -71,6 +71,7 @@ while [[ $# -gt 0 ]]; do
         --all|*)
             apps
             link_all
+            shift
             ;;
     esac
 done
