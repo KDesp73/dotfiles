@@ -44,6 +44,7 @@ get_installation_command() {
 get_package() {
     DISTRO=$(get_distro)
     INSTALLATION_COMMAND=$(get_installation_command "$DISTRO")
+    echo "$INSTALLATION_COMMAND $1"
     if ! command -v "$1"> /dev/null 2>&1; then
         $INSTALLATION_COMMAND "$1"
         echo_installed "$1"
