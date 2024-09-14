@@ -6,6 +6,7 @@ source "$BASE_DIR"/lib/packages.sh
 deps=(
     ninja
     ninja-build 
+    gettext
     make
     cmake 
     unzip 
@@ -18,7 +19,7 @@ git clone https://github.com/neovim/neovim "$HOME/neovim"
 cd "$HOME/neovim" || exit 1
 git checkout stable
 make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX="$HOME/neovim"
-sudo rm -r build/  # clear the CMake cache
+rm -r build/  # clear the CMake cache
 sudo make install
 export PATH="$HOME/neovim/bin:$PATH"
 
