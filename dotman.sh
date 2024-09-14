@@ -36,9 +36,9 @@ source lib/execute.sh
 # VVV Edit below VVV
 
 pkgs=(
+    zsh
     make
     cmake
-    vim
     swaylock-effects
     swaybg
     swayidle
