@@ -50,6 +50,9 @@ scripts=(
     ./scripts/tmux-installer.sh
     ./scripts/fzf-installer.sh
     ./scripts/zsh-installer.sh
+    ./scripts/todo-installer.sh
+    ./scripts/pomodoro-installer.sh
+    ./scripts/changelogger-installer.sh
 )
 
 links[".zshrc"]="$HOME"
