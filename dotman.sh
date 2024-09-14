@@ -48,6 +48,7 @@ scripts=(
     ./scripts/neovim-installer.sh
     ./scripts/rofi-installer.sh
     ./scripts/tmux-installer.sh
+    ./scripts/fzf-installer.sh
     ./scripts/zsh-installer.sh
 )
 
