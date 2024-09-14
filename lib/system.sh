@@ -70,3 +70,4 @@ get_uninstallation_command() {
     esac
     echo "$UNINSTALLATION_COMMAND"
 }
+

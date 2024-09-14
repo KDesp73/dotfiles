@@ -24,12 +24,13 @@ help() {
 
     echob "COMMANDS"
     echoi "run             Start the setup process"
-    # TODO
     echoi "install         Only install the packages"
     echoi "scripts         Only run the scripts"
     echoi "link            Only create the symlinks"
     echoi "clean           Remove symlinks"
     echoi "cleanall        Remove everything managed by dotman"
+    echoi "remove          Remove dotman from your dotfiles"
+    echoi "update          Get the latest dotman version" 
     echo ""
 
     echob "OPTIONS"
@@ -40,6 +41,21 @@ help() {
     echo "Made by KDesp73 (Konstantinos Despoinidis)"
 }
 
+remove(){
+    rm -rf lib
+    rm dotman.sh
+}
+
+update(){
+    cp dotman.sh dotman.sh.old
+    cp lib/paths.sh paths.sh.old
+
+    remove
+    bash <(curl -s https://raw.githubusercontent.com/KDesp73/dotman/main/get.sh)
+
+    mv dotman.sh.old dotman.sh
+    mv paths.sh.old lib/paths.sh
+}
 
 # Handles the commands and the flags of the cli
 execute() {
@@ -62,9 +78,9 @@ execute() {
                 shift
                 ;;
             run)
-                linker "$lks"
                 install_packages "$packages"
                 run_scripts "$scpts"
+                linker "$lks"
                 shift
                 ;;
             install)
@@ -88,7 +104,16 @@ execute() {
                 run_scripts "$scpts"
                 shift
                 ;;
-
+            update)
+                update
+                INFO "dotman updated"
+                shift
+                ;;
+            remove)
+                remove
+                INFO "dotman removed"
+                shift
+                ;;
             *)
                 ERRO "Invalid argument '$key'. Try 'dotman.sh --help'"
                 exit 1
