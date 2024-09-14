@@ -62,9 +62,9 @@ execute() {
                 shift
                 ;;
             run)
+                linker "$lks"
                 install_packages "$packages"
                 run_scripts "$scpts"
-                linker "$lks"
                 shift
                 ;;
             install)
