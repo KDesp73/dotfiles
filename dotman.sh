@@ -38,6 +38,7 @@ source lib/execute.sh
 pkgs=(
     zsh
     make
+    kitty
     cmake
     swaylock-effects
     swaybg

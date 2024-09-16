@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$BASE_DIR"/lib/logging.sh
+source lib/logging.sh
 
 if [ ! -d "$HOME/fzf" ]; then
     git clone https://github.com/junegunn/fzf.git "$HOME/fzf"

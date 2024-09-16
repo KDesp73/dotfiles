@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-source "$BASE_DIR"/lib/packages.sh
-source "$BASE_DIR"/lib/logging.sh
+source lib/packages.sh
+source lib/logging.sh
 
 install_package tmux
 

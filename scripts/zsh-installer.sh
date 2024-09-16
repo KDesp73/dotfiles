@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 
-source "$BASE_DIR"/lib/logging.sh
-source "$BASE_DIR"/lib/packages.sh
+source lib/logging.sh
+source lib/packages.sh
 
 install_package zsh
 

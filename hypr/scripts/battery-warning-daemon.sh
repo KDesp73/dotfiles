@@ -4,8 +4,8 @@
 BAT=$(ls /sys/class/power_supply |grep BAT |head -n 1)
 
 get_perc (){
-    capacity="$(cat /sys/class/power_supply/${BAT}/capacity)"
-    BATSTATUS="$(cat /sys/class/power_supply/${BAT}/status)"
+    capacity="$(cat /sys/class/power_supply/"${BAT}"/capacity)"
+    BATSTATUS="$(cat /sys/class/power_supply/"${BAT}"/status)"
 }
 
 warning (){
