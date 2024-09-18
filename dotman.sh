@@ -45,16 +45,7 @@ pkgs=(
     swayidle
 )
 
-scripts=(
-    ./scripts/neovim-installer.sh
-    ./scripts/rofi-installer.sh
-    ./scripts/tmux-installer.sh
-    ./scripts/fzf-installer.sh
-    ./scripts/zsh-installer.sh
-    ./scripts/todo-installer.sh
-    ./scripts/pomodoro-installer.sh
-    ./scripts/changelogger-installer.sh
-)
+scripts=(@) # Run all
 
 links[".zshrc"]="$HOME"
 links[".gitconfig"]="$HOME"
