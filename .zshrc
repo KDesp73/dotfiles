@@ -109,18 +109,18 @@ export PATH=${PATH}:"$HOME/c3-linux"
 
 # aliases
 
+alias cl=changelogger
+
 # -a for file
 # -P for target path
 alias ytdl="yt-dlp -qx --audio-format mp3 --audio-quality 0 --no-playlist"
 
 alias emulator="~/Android/Sdk/emulator/emulator"
 alias astudio="nohup /usr/local/android-studio/bin/studio.sh &"
-alias la="lsd -a"
-alias ll="lsd -l"
-alias lla="lsd -la"
 # alias nvim="nvim -u $HOME/.config/nvim/init.lua"
 alias vi=nvim
 alias nv=nvim
+alias emacs='emacs -nw'
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias python=python3
 alias beep='paplay $BEEP'
@@ -142,6 +142,11 @@ alias show_cursor="echo \"\\e[?25h\""
 alias hide_cursor="echo \"\\e[?25l\""
 alias attach="tmux attach-session -t"
 alias gut=git
+
+alias ls=lsd
+alias la=ls -a
+alias ll=ls -l
+alias lla=ls -la
 
 source $ZSH/oh-my-zsh.sh
 # source ~/emsdk/emsdk_env.sh 

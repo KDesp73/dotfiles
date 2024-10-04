@@ -43,9 +43,13 @@ pkgs=(
     swaylock-effects
     swaybg
     swayidle
+    emacs
 )
 
 scripts=(@) # Run all
+
+links[".emacs"]="$HOME"
+links[".emacs.d"]="$HOME"
 
 links[".zshrc"]="$HOME"
 links[".gitconfig"]="$HOME"
