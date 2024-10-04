@@ -48,6 +48,7 @@
    "b" 'switch-to-buffer
    "k" 'kill-buffer))
 
+(define-key evil-normal-state-map (kbd "C-c") 'evil-normal-state)
 
 ;; Basic UI customizations
 (menu-bar-mode -1)              ; Disable menu bar
