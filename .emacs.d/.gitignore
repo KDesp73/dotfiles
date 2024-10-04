@@ -1,0 +1,20 @@
+auto-save-list/
+backups/
+
+# Ignore installed packages and archives from package managers (like ELPA, MELPA, etc.)
+elpa/
+
+# Ignore GnuPG-related files (used by some Emacs features like package signing)
+elpa/gnupg/
+
+# Ignore transient state (like session data)
+transient/
+
+# Ignore compiled .elc files (byte-compiled Emacs Lisp files)
+*.elc
+
+# Ignore cache/history files
+transient/history.el
+
+# Ignore package archives metadata
+elpa/archives/

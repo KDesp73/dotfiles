@@ -9,3 +9,4 @@
 - Rofi
 - Waybar
 - Kitty Terminal
+- Emacs Config
