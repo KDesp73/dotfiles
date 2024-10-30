@@ -185,17 +185,13 @@ return require('packer').startup(function(use)
 
     use 'norcalli/nvim-colorizer.lua'
 
-    use('sophacles/vim-processing')
-
     use 'nvim-treesitter/nvim-treesitter-context'
 
-    use({
-        "L3MON4D3/LuaSnip",
-        -- follow latest release.
-        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-        -- install jsregexp (optional!:).
-        run = "make install_jsregexp"
-    })
+    -- use({
+    --     "L3MON4D3/LuaSnip",
+    --     -- install jsregexp (optional!:).
+    --     run = "make install_jsregexp"
+    -- })
 
     use 'ray-x/go.nvim'
 

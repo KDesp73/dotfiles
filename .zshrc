@@ -108,6 +108,7 @@ export PATH=${PATH}:"$HOME/.local/bin"
 export PATH=${PATH}:"$HOME/c3-linux"
 
 # aliases
+alias pgconnect="psql -U iee2021035 -h dblabs.iee.ihu.gr -W -d iee2021035"
 
 alias cl=changelogger
 
@@ -143,7 +144,6 @@ alias hide_cursor="echo \"\\e[?25l\""
 alias attach="tmux attach-session -t"
 alias gut=git
 
-alias ls=lsd
 alias la=ls -a
 alias ll=ls -l
 alias lla=ls -la
@@ -153,6 +153,8 @@ source $ZSH/oh-my-zsh.sh
 # clear
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+alias ls=lsd
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
