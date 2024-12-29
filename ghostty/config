@@ -1,10 +1,17 @@
-title = " "
-window-decoration = false
-shell-integration = detect
+# Ghostty Config
+# by KDesp73
 
-font-family = "JetBrainsMono NF Regular"
-theme = catppuccin-macchiato
-
-cursor-style-blink = false
+adjust-cell-height = 10%
 cursor-style = block
+cursor-style-blink = false
+font-family = "JetBrainsMonoNL NFM Bold"
 mouse-hide-while-typing
+shell-integration = none
+shell-integration-features = no-cursor
+theme = catppuccin-macchiato
+title = " "
+window-colorspace = "display-p3"
+window-decoration = false
+window-padding-balance = true
+window-padding-y = 4
+window-save-state = always
