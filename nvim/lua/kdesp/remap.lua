@@ -13,10 +13,24 @@ vim.api.nvim_set_keymap("n", "<C-σ>", ":w!<CR>", { noremap = true, silent = tru
 vim.api.nvim_set_keymap("i", "<C-s>", "<Esc>:w!<CR>a", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-σ>", "<Esc>:w!<CR>a", { noremap = true, silent = true })
 
+local english_alphabet = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"}
+local english_alphabet_capital = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}
+local greek_alphabet = {"α", "β", "ψ", "δ", "ε", "φ", "γ", "η", "ι", "ξ", "κ", "λ", "μ", "ν", "ο", "π", ";", "ρ", "σ", "τ", "θ", "ω", "ς", "χ", "υ", "ζ"}
+local greek_alphabet_capital = {"Α", "Β", "Ψ", "Δ", "Ε", "Φ", "Γ", "Η", "Ι", "Ξ", "Κ", "Λ", "Μ", "Ν", "Ο", "Π", ";", "Ρ", "Σ", "Τ", "Θ", "Ω", "Σ", "Χ", "Υ", "Ζ"}
+
+for i = 1, #english_alphabet do
+    vim.api.nvim_set_keymap("n", greek_alphabet[i], english_alphabet[i], { noremap = true, silent = true })
+    vim.api.nvim_set_keymap("n", greek_alphabet_capital[i], english_alphabet_capital[i], { noremap = true, silent = true })
+end
+
+
 -- Remap Ctrl+C to Esc
 vim.api.nvim_set_keymap('n', '<C-c>', '<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('v', '<C-c>', '<Esc>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-ψ>", "<Esc>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-ψ>", "<Esc>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<C-ψ>", "<Esc>", { noremap = true, silent = true })
 
 -- Remap Esc to vim.cmd.BufferClose
 -- vim.api.nvim_set_keymap('n', '<Esc>', ':q<CR>', { noremap = true, silent = true })

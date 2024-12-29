@@ -106,9 +106,13 @@ export PATH=${PATH}:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID
 export PATH=${PATH}:$ANDROID_HOME/cmdline-tools/latest/bin/
 export PATH=${PATH}:"$HOME/.local/bin"
 export PATH=${PATH}:"$HOME/c3-linux"
+export PATH=${PATH}:"$HOME/idea-IC-242.23726.103/bin"
+
+export PATH=${PATH}:"$repos/cpp/Stockfish/src"
 
 # aliases
 alias pgconnect="psql -U iee2021035 -h dblabs.iee.ihu.gr -W -d iee2021035"
+alias code=vscodium
 
 alias cl=changelogger
 

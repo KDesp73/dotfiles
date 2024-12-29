@@ -1,0 +1,10 @@
+title = " "
+window-decoration = false
+shell-integration = detect
+
+font-family = "JetBrainsMono NF Regular"
+theme = catppuccin-macchiato
+
+cursor-style-blink = false
+cursor-style = block
+mouse-hide-while-typing

@@ -3,7 +3,9 @@
 dir="$HOME/.config/rofi"
 theme='style-1'
 
+source "$HOME/.zshrc"
+
 ## Run
 rofi \
     -show run \
-    -theme ${dir}/${theme}.rasi
+    -theme "${dir}/${theme}.rasi"
