@@ -1,3 +1,1 @@
-require("kdesp")
-
-
+require("kdesp73")

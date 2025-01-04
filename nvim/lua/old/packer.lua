@@ -19,8 +19,8 @@ return require('packer').startup(function(use)
     }
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
-
     use('nvim-treesitter/playground')
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     use("nvim-lua/plenary.nvim")
     use {
@@ -76,15 +76,6 @@ return require('packer').startup(function(use)
     --     requires = { "mfussenegger/nvim-dap" }
     -- }
 
-
-    -- use { -- needs configuring
-    --     "ThePrimeagen/refactoring.nvim",
-    --     requires = {
-    --         { "nvim-lua/plenary.nvim" },
-    --         { "nvim-treesitter/nvim-treesitter" }
-    --     }
-    -- }
-
     use {
         "folke/which-key.nvim",
         config = function()
@@ -132,8 +123,6 @@ return require('packer').startup(function(use)
 
     use('editorconfig/editorconfig-vim')
 
-    -- use('Microsoft/vscode-cpptools')
-
     -- use {
     --     "nvim-neorg/neorg",
     --     config = function()
@@ -157,11 +146,11 @@ return require('packer').startup(function(use)
 
     -- use ('rcarriga/nvim-notify')
 
-    use "ThePrimeagen/vim-be-good"
-    use "evanleck/vim-svelte"
-
-
-    use "jalvesaq/Nvim-R"
+    -- use "ThePrimeagen/vim-be-good"
+    -- use "evanleck/vim-svelte"
+    --
+    --
+    -- use "jalvesaq/Nvim-R"
 
     use "milisims/nvim-luaref"
     use "folke/neodev.nvim"
@@ -176,24 +165,7 @@ return require('packer').startup(function(use)
 
     use "folke/todo-comments.nvim"
 
-
-    use {
-        "theRealCarneiro/hyprland-vim-syntax",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
-        ft = "hypr",
-    }
-
     use 'norcalli/nvim-colorizer.lua'
 
-    use 'nvim-treesitter/nvim-treesitter-context'
-
-    -- use({
-    --     "L3MON4D3/LuaSnip",
-    --     -- install jsregexp (optional!:).
-    --     run = "make install_jsregexp"
-    -- })
-
     use 'ray-x/go.nvim'
-
-    -- use "OXY2DEV/markview.nvim"
 end)

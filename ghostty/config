@@ -4,7 +4,7 @@
 adjust-cell-height = 10%
 cursor-style = block
 cursor-style-blink = false
-font-family = "JetBrainsMonoNL NFM Bold"
+font-family = "JetBrainsMonoNL NFM SemiBold"
 mouse-hide-while-typing
 shell-integration = none
 shell-integration-features = no-cursor
