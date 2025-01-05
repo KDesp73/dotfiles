@@ -5,7 +5,6 @@ return {
     ---@type ibl.config
     opts = {
         indent = {
-            char = "┊",
             smart_indent_cap = true,
         },
     },
