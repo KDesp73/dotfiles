@@ -1,3 +1,4 @@
+--[[
 return {
     "nvim-tree/nvim-tree.lua",
     dependencies = {
@@ -22,3 +23,4 @@ return {
         },
     },
 }
+]]--

@@ -123,6 +123,7 @@ return {
         lsp.setup()
 
         require'lspconfig'.kotlin_language_server.setup{}
+        require'lspconfig'.texlab.setup{}
 
     end
 }
