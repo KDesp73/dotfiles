@@ -79,7 +79,6 @@ NVIM_APPNAME=KDesp73/dotfiles/nvim nvim
 ### plugin-manager
 
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
-+ [wbthomason/packer.nvim](https://dotfyle.com/plugins/wbthomason/packer.nvim)
 ### project
 
 + [KDesp73/project-starter.nvim](https://dotfyle.com/plugins/KDesp73/project-starter.nvim)

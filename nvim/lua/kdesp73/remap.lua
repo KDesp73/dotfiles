@@ -1,5 +1,3 @@
-local vim = vim
-
 local map = vim.keymap.set
 
 

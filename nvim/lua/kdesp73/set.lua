@@ -23,7 +23,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse= ""
 
 -- EditorConfig Format on save
-function loadAndEdit()
+function LoadAndEdit()
     vim.cmd('EditorConfigReload')
     vim.cmd('e')
 end

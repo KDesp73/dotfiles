@@ -37,7 +37,7 @@ return {
                 theme = bubbles_theme,
                 component_separators = '|',
                 section_separators = { left = '', right = '' },
-                disabled_filetypes = { 'packer', 'NvimTree' },
+                disabled_filetypes = { 'NvimTree' },
                 globalstatus = true,
 
             },
