@@ -14,10 +14,12 @@ link(){
     local file="$dest/$src"
 
     if [ -e "$file" ]; then
-        if ! read_yes_no "File $file already exists. Remove and link?"; then
-            return 1
-        fi
-        rm -rf "$file"
+        WARN "Link already exists"
+        return
+        # if ! read_yes_no "File $file already exists. Remove and link?"; then
+        #     return 1
+        # fi
+        # rm -rf "$file"
     fi
 
     ln -s "$BASE_DIR/$src" "$file"

@@ -63,6 +63,7 @@ links["kitty"]="$CONFIG"
 links["waybar"]="$CONFIG"
 links["dunst"]="$CONFIG"
 links["ghostty"]="$CONFIG"
+links["sway"]="$CONFIG"
 
 execute pkgs scripts links "$@"
 

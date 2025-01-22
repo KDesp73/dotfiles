@@ -153,8 +153,7 @@ alias ll=ls -l
 alias lla=ls -la
 
 source $ZSH/oh-my-zsh.sh
-# source ~/emsdk/emsdk_env.sh 
-# clear
+# source $HOME/emsdk/emsdk_env.sh &>/dev/null
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -168,3 +167,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/home/kdesp73/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/kdesp73/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+export LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH="$HOME"/.sdkman/candidates/java/23.ea.8-open/lib:${LD_LIBRARY_PATH}
