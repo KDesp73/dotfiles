@@ -6,7 +6,7 @@ set $term kitty
 set $menu ~/.config/rofi/run/run.sh
 
 ### Output configuration
-output * bg ~/dotfiles/walls/2.png fill
+output * bg ~/dotfiles/walls/waves.png fill
 
 # Example configuration:
 #
