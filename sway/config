@@ -43,7 +43,6 @@ input * {
     xkb_numlock enabled
 }
 
-include "keybinds.conf"
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -65,4 +64,6 @@ gaps outer 0
 default_border none
 
 
+include "startup.conf"
+include "keybinds.conf"
 include /etc/sway/config.d/*
