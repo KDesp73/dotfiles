@@ -1,12 +1,20 @@
 # dotfiles
 
-## Includes
+Handled by [dotman](https://github.com/KDesp73/dotman)
 
-- Neovim config
-- Tmux config
-- `.zshrc` file
+## Configurations Included
+
+- Neovim 
+- Tmux 
+- Zsh
 - Hyprland
 - Rofi
 - Waybar
 - Kitty Terminal
-- Emacs Config
+- Emacs
+- Sway
+- Fuzzel
+- Ghostty
+- Changelogger
+- Gdb
+- Netbeans
