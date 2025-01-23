@@ -153,3 +153,6 @@ label:focus {
     background-color: @macchiato-Surface2;
 }
 
+#tray {
+    background-color: @macchiato-Crust;
+}

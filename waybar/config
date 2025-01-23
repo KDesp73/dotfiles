@@ -11,6 +11,7 @@
         "clock"
     ],
     "modules-right": [
+        "tray",
         "pulseaudio",
         "battery",
         "temperature",
@@ -27,6 +28,11 @@
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 5
     },
 
     "battery": {

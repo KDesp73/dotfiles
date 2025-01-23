@@ -1,17 +1,8 @@
 # Sway init config file
 
 ### Variables
-
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# # Home row direction keys, like vim
-# set $left h
-# set $down j
-# set $up k
-# set $right l
-# Your preferred terminal emulator
 set $term kitty
-# Your preferred application launcher
 set $menu ~/.config/rofi/run/run.sh
 
 ### Output configuration
@@ -64,19 +55,14 @@ floating_modifier $mod normal
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-# bar {
-#     position top
-#
-#     # When the status_command prints a new line to stdout, swaybar updates.
-#     # The default just shows the current date and time.
-#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-#
-#     colors {
-#         statusline #ffffff
-#         background #323232
-#         inactive_workspace #32323200 #32323200 #5c5c5c
-#     }
-# }
-bar swaybar_command waybar
+bar {
+    swaybar_command waybar
+}
+
+# Borders
+gaps inner 15
+gaps outer 0
+default_border none
+
 
 include /etc/sway/config.d/*

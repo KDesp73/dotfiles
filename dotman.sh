@@ -44,13 +44,14 @@ pkgs=(
     swaybg
     swayidle
     emacs
+    fuzzel
+    waybar
 )
 
 scripts=(@) # Run all
 
 links[".emacs"]="$HOME"
 links[".emacs.d"]="$HOME"
-
 links[".zshrc"]="$HOME"
 links[".gitconfig"]="$HOME"
 links[".gdbinit"]="$HOME"
