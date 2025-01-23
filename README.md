@@ -17,4 +17,5 @@ Handled by [dotman](https://github.com/KDesp73/dotman)
 - Ghostty
 - Changelogger
 - Gdb
+- Git
 - Netbeans
