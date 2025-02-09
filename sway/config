@@ -10,7 +10,7 @@ output * bg ~/dotfiles/walls/waves.png fill
 
 # Having the external monitor on the right
 output HDMI-A-1 pos 1920 0
-output eDP-1 pos 0 0
+output eDP-1 pos 0 1
 
 workspace 1 output eDP-1
 workspace 2 output HDMI-A-1
@@ -42,7 +42,7 @@ input "1267:12535:ELAN1200:00_04F3:30F7_Touchpad" {
     middle_emulation enabled
 }
 input * {
-    xkb_layout "us, gr"
+    xkb_layout "gr, us"
     xkb_switch_layout next
     xkb_options grp:win_space_toggle
     xkb_numlock enabled

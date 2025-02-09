@@ -111,6 +111,7 @@ export PATH=${PATH}:"$HOME/idea-IC-242.23726.103/bin"
 export PATH=${PATH}:"$repos/cpp/Stockfish/src"
 
 # aliases
+alias iofetch="bash <(curl -s https://raw.githubusercontent.com/IncludeOnly/installer.sh/main/installer.sh)"
 alias pgconnect="psql -U iee2021035 -h dblabs.iee.ihu.gr -W -d iee2021035"
 alias code=vscodium
 
