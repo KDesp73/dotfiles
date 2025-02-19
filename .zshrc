@@ -172,3 +172,7 @@ export PHP_INI_SCAN_DIR="/home/kdesp73/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 export LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH="$HOME"/.sdkman/candidates/java/23.ea.8-open/lib:${LD_LIBRARY_PATH}
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
