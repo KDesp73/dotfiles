@@ -173,6 +173,7 @@ export LD_LIBRARY_PATH=/usr/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH="$HOME"/.sdkman/candidates/java/23.ea.8-open/lib:${LD_LIBRARY_PATH}
 
+export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

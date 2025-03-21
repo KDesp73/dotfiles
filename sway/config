@@ -1,4 +1,4 @@
-# Sway init config fil
+# Sway init config file
 
 ### Variables
 set $mod Mod4
@@ -42,7 +42,7 @@ input "1267:12535:ELAN1200:00_04F3:30F7_Touchpad" {
     middle_emulation enabled
 }
 input * {
-    xkb_layout "gr, us"
+    xkb_layout "us, gr"
     xkb_switch_layout next
     xkb_options grp:win_space_toggle
     xkb_numlock enabled
