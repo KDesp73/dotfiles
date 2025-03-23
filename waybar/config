@@ -16,7 +16,6 @@
         "backlight",
         "battery",
         "clock",
-        "tray",
         "sway/language",
         "custom/power"
     ],
@@ -25,10 +24,6 @@
         "format-icons": {
             "default": ""
         }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
     },
     "custom/music": {
         "format": " {} 󰎇",
