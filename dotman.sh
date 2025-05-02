@@ -53,7 +53,7 @@ scripts=(@) # Run all
 links[".emacs"]="$HOME"
 links[".emacs.d"]="$HOME"
 links[".zshrc"]="$HOME"
-links[".gitconfig"]="$HOME"
+links["git"]="$CONFIG"
 links[".gdbinit"]="$HOME"
 links["gf2_config.ini"]="$CONFIG"
 links["nvim"]="$CONFIG"
@@ -69,5 +69,3 @@ links["sway"]="$CONFIG"
 links["fuzzel"]="$CONFIG"
 
 execute pkgs scripts links "$@"
-
-

@@ -111,7 +111,7 @@ export PATH=${PATH}:"$HOME/idea-IC-242.23726.103/bin"
 export PATH=${PATH}:"$repos/cpp/Stockfish/src"
 
 # aliases
-alias iofetch="bash <(curl -s https://raw.githubusercontent.com/IncludeOnly/installer.sh/main/installer.sh)"
+alias iofetch="bash <(curl -s https://raw.githubusercontent.com/KDesp73/IncludeOnly/refs/heads/main/scripts/installer.sh)"
 alias pgconnect="psql -U iee2021035 -h dblabs.iee.ihu.gr -W -d iee2021035"
 alias code=vscodium
 
@@ -136,7 +136,7 @@ alias mvn-init="~/mvn-init.sh"
 alias notes="nv ~/notes"
 alias markprev="python3 $repos/python/textual/examples/markdown.py"
 alias 0ad="nohup flatpak run com.play0ad.zeroad &"
-alias open="nohup xdg-open&"
+alias open="xdg-open"
 # alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
 alias gitlog="git log --oneline | fzf --preview 'git show --name-only {1}'" 
@@ -158,14 +158,6 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-alias ls=lsd
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/home/kdesp73/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/kdesp73/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
 
@@ -174,6 +166,14 @@ export LD_LIBRARY_PATH=/usr/local/lib:${LD_LIBRARY_PATH}
 export LD_LIBRARY_PATH="$HOME"/.sdkman/candidates/java/23.ea.8-open/lib:${LD_LIBRARY_PATH}
 
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
+alias ls=lsd
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)

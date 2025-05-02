@@ -56,3 +56,6 @@
     context = white
     whitespace = yellow reverse
     old = red
+
+[commit]
+	template = /home/kdesp73/.config/git/template
