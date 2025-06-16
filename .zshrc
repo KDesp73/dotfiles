@@ -3,11 +3,10 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
+
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
+# ZSH_THEME="fwalch"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -71,8 +70,6 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    bundler
-    ruby
     fzf
 )
 
@@ -93,12 +90,8 @@ else
 fi
 
 export repos="$HOME/personal/repos"
-export neoconf="$HOME/.config/nvim"
-export tmuxconf="$HOME/.config/tmux"
 export dotfiles="$HOME/dotfiles"
-export BEEP="/usr/share/sounds/Yaru/stereo/bell.oga"
 export ANDROID_HOME=$HOME/Android/Sdk
-
 export PATH=$PATH:$HOME/.dotnet:$HOME/.dotnet/tools
 export PATH=${PATH}:"$HOME/.cargo/bin"
 export PATH=${PATH}:"$repos/bash/scripts"
@@ -123,21 +116,14 @@ alias ytdl="yt-dlp -qx --audio-format mp3 --audio-quality 0 --no-playlist"
 
 alias emulator="~/Android/Sdk/emulator/emulator"
 alias astudio="nohup /usr/local/android-studio/bin/studio.sh &"
-# alias nvim="nvim -u $HOME/.config/nvim/init.lua"
 alias vi=nvim
 alias nv=nvim
 alias emacs='emacs -nw'
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
 alias python=python3
-alias beep='paplay $BEEP'
-alias server="$repos/ruby/Ruby-Web-Server/server.rb"
 alias update="pamac update && pamac upgrade"
-alias mvn-init="~/mvn-init.sh"
-alias notes="nv ~/notes"
-alias markprev="python3 $repos/python/textual/examples/markdown.py"
-alias 0ad="nohup flatpak run com.play0ad.zeroad &"
 alias open="xdg-open"
-# alias fzf="fzf --preview 'cat {1}'"
+alias fzf="fzf --preview 'cat {1}'"
 alias nf="nv \$(fzf)"
 alias gitlog="git log --oneline | fzf --preview 'git show --name-only {1}'" 
 alias exti=exit
@@ -171,9 +157,10 @@ alias ls=lsd
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)

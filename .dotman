@@ -1,0 +1,44 @@
+> packages
+zsh
+make
+kitty
+cmake
+swaylock-effects
+swaybg
+swayidle
+emacs
+fuzzel
+waybar
+
+> scripts
+scripts/changelogger-installer.sh
+scripts/fzf-installer.sh
+scripts/neovim-installer.sh
+scripts/pomodoro-installer.sh
+scripts/rofi-installer.sh
+scripts/tmux-installer.sh
+scripts/todo-installer.sh
+scripts/zsh-installer.sh
+
+> links
+.emacs -> {home}
+.emacs.d -> {home}
+.zshrc -> {home}
+git -> {config}
+.gdbinit -> {home}
+gf2_config.ini -> {config}
+nvim -> {config}
+.changelogger.yml -> {config}
+tmux -> {config}
+hypr -> {config}
+rofi -> {config}
+kitty -> {config}
+waybar -> {config}
+dunst -> {config}
+ghostty -> {config}
+sway -> {config}
+fuzzel -> {config}
+
+> variables
+config = {home}/.config
+
