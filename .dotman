@@ -1,9 +1,13 @@
 > packages
 bear
+cc
 cmake
+cmake
+curl
 emacs
 fuzzel
 gcc
+go
 kitty
 make
 neofetch
@@ -11,7 +15,9 @@ python3
 swaybg
 swayidle
 swaylock-effects
+vim
 waybar
+wget
 zig
 zsh
 
