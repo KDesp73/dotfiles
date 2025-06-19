@@ -1,14 +1,19 @@
 > packages
-zsh
-make
-kitty
+bear
 cmake
-swaylock-effects
-swaybg
-swayidle
 emacs
 fuzzel
+gcc
+kitty
+make
+neofetch
+python3
+swaybg
+swayidle
+swaylock-effects
 waybar
+zig
+zsh
 
 > scripts
 scripts/changelogger-installer.sh
@@ -21,7 +26,6 @@ scripts/todo-installer.sh
 scripts/zsh-installer.sh
 
 > links
-.emacs -> {home}
 .emacs.d -> {home}
 .zshrc -> {home}
 git -> {config}
