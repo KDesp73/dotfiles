@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-source lib/packages.sh
-source lib/logging.sh
-
-install_package tmux
-
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 [ -e "$HOME/.config/tmux/plugins/tpm" ] || git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/

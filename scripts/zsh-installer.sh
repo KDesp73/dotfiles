@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-
-source lib/logging.sh
-source lib/packages.sh
-
-install_package zsh
-
 chsh -s "$(which zsh)"
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then

@@ -1,25 +1,30 @@
 > packages
 bear
 cc
-cmake
-cmake
+cmake 
 curl
 emacs
 fuzzel
 gcc
+gettext
 go
 kitty
 make
 neofetch
+ninja
+ninja-build 
 python3
 swaybg
 swayidle
 swaylock-effects
+tmux
+unzip 
 vim
 waybar
 wget
 zig
 zsh
+
 
 > scripts
 scripts/changelogger-installer.sh

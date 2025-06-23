@@ -1,19 +1,5 @@
 #!/usr/bin/env bash
 
-source lib/logging.sh
-source lib/packages.sh
-
-deps=(
-    ninja
-    ninja-build 
-    gettext
-    make
-    cmake 
-    unzip 
-    curl
-)
-install_packages deps
-
 # Install neovim
 git clone https://github.com/neovim/neovim "$HOME/neovim" --depth=1
 cd "$HOME/neovim" || exit 1
