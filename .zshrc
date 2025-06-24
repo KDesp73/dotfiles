@@ -73,7 +73,7 @@ plugins=(
     fzf
 )
 
-export FZF_BASE="$HOME/.fzf"
+export FZF_BASE="$HOME/fzf"
 
 # User configuration
 
@@ -158,7 +158,7 @@ alias ls=lsd
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

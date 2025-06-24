@@ -40,10 +40,10 @@
         "max-length": 50
     },
     "clock": {
-        // "timezone": "Asia/Dubai",
+        "timezone": "Europe/Athens",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "󰃭 {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+        "format": "{:%H:%M}"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -75,8 +75,8 @@
             "critical": 15
         },
         "format": "{icon}",
-        "format-charging": "",
-        "format-plugged": "",
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
         "format-alt": "{icon} {capacity}%",
         "format-icons": [
             "",
