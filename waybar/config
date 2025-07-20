@@ -125,7 +125,7 @@
     },
     "custom/power": {
         "tooltip": false,
-        "on-click": "exec ~/.config/waybar/scripts/powermenu.sh",
+        "on-click": "exec ~/.config/rofi/powermenu/type-2/powermenu.sh",
         "format": "⏻"
     },
 

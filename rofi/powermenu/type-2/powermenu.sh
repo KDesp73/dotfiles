@@ -53,27 +53,25 @@ run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
 		if [[ $1 == '--shutdown' ]]; then
-			systemctl poweroff
+			# Shutdown using runit-compatible command
+			sudo shutdown -h now
 		elif [[ $1 == '--reboot' ]]; then
-			systemctl reboot
+			# Reboot using runit-compatible command
+			sudo reboot
 		elif [[ $1 == '--suspend' ]]; then
+			# Suspend using elogind or equivalent
 			mpc -q pause
 			amixer set Master mute
-			systemctl suspend
+			loginctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-				i3-msg exit
-			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
-				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-			elif [[ "$DESKTOP_SESSION" == "xfce" ]]; then
-				killall xfce4-session
-			elif [[ "$DESKTOP_SESSION" == "hyprland" ]]; then
-				killall Hyprland
-			fi
+			case "$DESKTOP_SESSION" in
+				openbox) openbox --exit ;;
+				bspwm) bspc quit ;;
+				i3) i3-msg exit ;;
+				plasma) qdbus org.kde.ksmserver /KSMServer logout 0 0 0 ;;
+				xfce) killall xfce4-session ;;
+				hyprland) killall Hyprland ;;
+		esac
 		fi
 	else
 		exit 0
@@ -91,21 +89,15 @@ case ${chosen} in
         ;;
     "$lock")
         swaylock \
-            --screenshots \
-            --clock \
-            --indicator \
             --indicator-radius 100 \
             --indicator-thickness 7 \
-            --effect-blur 7x5 \
-            --effect-vignette 0.5:0.5 \
             --ring-color 181926 \
             --text-color cad3ff \
             --key-hl-color a6da95 \
             --line-color 00000000 \
             --inside-color 00000088 \
             --separator-color 00000000 \
-            --fade-in 0.2
-            # --grace 2 \
+            --color 28282828
             ;;
     "$suspend")
         run_cmd --suspend
