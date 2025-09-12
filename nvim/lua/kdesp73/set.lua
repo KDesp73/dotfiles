@@ -22,6 +22,16 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.relativenumber = true
 vim.opt.mouse= ""
 
+vim.api.nvim_create_autocmd({"FileType"}, {
+    pattern = {"typescript", "typescriptreact", "javascript", "javascriptreact", "mjs"},
+    callback = function()
+        vim.opt_local.tabstop = 2
+        vim.opt_local.softtabstop = 2
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.expandtab = true
+    end
+})
+
 -- EditorConfig Format on save
 function LoadAndEdit()
     vim.cmd('EditorConfigReload')
