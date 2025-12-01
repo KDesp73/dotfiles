@@ -54,4 +54,5 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 augroup END
 ]]
 
+vim.g.lazyvim_php_lsp = "intelephense"
 

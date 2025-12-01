@@ -1,40 +1,50 @@
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    opt = {
-        ensure_installed = {
-            "c",
-            "cpp",
-            "lua",
-            "vim",
-            "vimdoc",
-            "query",
-            "javascript",
-            "rust",
-            "java",
-            "ruby",
-            "cmake",
-            "svelte",
-            "html",
-            "css",
-            "python",
-            "typescript"
-        },
+    opts = {
+        "c",
+        "cpp",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "javascript",
+        "rust",
+        "java",
+        "ruby",
+        "cmake",
+        "svelte",
+        "html",
+        "css",
+        "python",
+        "typescript",
+        "blade",
+        "php_only",
+        "php"
+    },
+    config = function(_, opts)
+        vim.filetype.add({
+            pattern = {
+                [".*%.blade%.php"] = "blade",
+            },
+        })
 
-        -- Install parsers synchronously (only applied to `ensure_installed`)
-        sync_install = false,
+        require("nvim-treesitter.configs").setup(opts)
+        local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+        parser_config.blade = {
+            install_info = {
+                url = "https://github.com/EmranMR/tree-sitter-blade",
+                files = { "src/parser.c" },
+                branch = "main",
+            },
+            filetype = "blade",
+        }
+    end,
 
-        -- Automatically install missing parsers when entering buffer
-        -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-        auto_install = true,
-
-        highlight = {
-            enable = true,
-            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-            -- Using this option may slow down your editor, and you may see some duplicate highlights.
-            -- Instead of true it can also be a list of languages
-            additional_vim_regex_highlighting = false,
-        },
-    }
+    sync_install = false,
+    auto_install = true,
+    highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
 }
