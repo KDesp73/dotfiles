@@ -2,25 +2,33 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     opts = {
-        "c",
-        "cpp",
-        "lua",
-        "vim",
-        "vimdoc",
-        "query",
-        "javascript",
-        "rust",
-        "java",
-        "ruby",
-        "cmake",
-        "svelte",
-        "html",
-        "css",
-        "python",
-        "typescript",
-        "blade",
-        "php_only",
-        "php"
+        ensure_installed = {
+            "c",
+            "cpp",
+            "lua",
+            "vim",
+            "vimdoc",
+            "query",
+            "javascript",
+            "rust",
+            "java",
+            "ruby",
+            "cmake",
+            "svelte",
+            "html",
+            "css",
+            "python",
+            "typescript",
+            "blade",
+            "php_only",
+            "php",
+        },
+        sync_install = false,
+        auto_install = true,
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+        },
     },
     config = function(_, opts)
         vim.filetype.add({
@@ -29,7 +37,6 @@ return {
             },
         })
 
-        require("nvim-treesitter.configs").setup(opts)
         local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
         parser_config.blade = {
             install_info = {
@@ -39,12 +46,7 @@ return {
             },
             filetype = "blade",
         }
-    end,
 
-    sync_install = false,
-    auto_install = true,
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
+        require("nvim-treesitter.configs").setup(opts)
+    end,
 }

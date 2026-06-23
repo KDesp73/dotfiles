@@ -6,7 +6,7 @@ return {
             blue   = '#8aadf4',
             green  = '#a6da95',
             black  = '#181926',
-            white  = '#cad3f',
+            white  = '#cad3f5',
             red    = '#ed8796',
             violet = '#c6a0f6',
             grey   = '#1e2030',
