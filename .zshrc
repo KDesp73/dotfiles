@@ -106,8 +106,7 @@ alias pgconnect="psql -U iee2021035 -h dblabs.iee.ihu.gr -W -d iee2021035"
 alias python=python3
 alias show_cursor="echo \"\e[?25h\""
 alias tmux="tmux -f ~/.config/tmux/tmux.conf"
-alias todo="rlwrap todo"
-alias musicsync="rsync -avz --delete --exclude='*.lrc' $HOME/Music void@192.168.1.25:/home/void/"
+alias musicsync="rsync -avz --delete --exclude='*.lrc' $HOME/Music void@192.168.1.15:/home/void/"
 
 ########################################
 # Custom Tools / Scripts
@@ -126,7 +125,7 @@ source "$HOME/.secrets"
 # Misc
 ########################################
 export $(/usr/bin/dbus-launch)
-wcli --location Thessaloniki
+# wcli --location Thessaloniki
 
 ########################################
 # Load Oh-My-Zsh
@@ -139,6 +138,5 @@ export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 
 alias ls=lsd
-
 # opencode
 export PATH=/home/kdesp73/.opencode/bin:$PATH

@@ -10,6 +10,8 @@ output * bg ~/dotfiles/walls/waves.png fill
 
 # Having the external monitor on the right
 output eDP-1 pos 1920 0
+# CRT config
+# output HDMI-A-1 mode 800x600@60Hz pos 0 1
 output HDMI-A-1 pos 0 1
 
 workspace 1 output HDMI-A-1
