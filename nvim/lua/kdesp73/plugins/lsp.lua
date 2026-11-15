@@ -1,84 +1,22 @@
 return {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
-        dependencies = {
-            -- LSP Support
-            { "neovim/nvim-lspconfig" }, -- Required
-            {                            -- Optional
-            "williamboman/mason.nvim",
-            run = function()
-                pcall(vim.cmd, "MasonUpdate")
-            end,
-        },
-        { "williamboman/mason-lspconfig.nvim" }, -- Optional
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v4.x",
+    dependencies = {
+        -- LSP Support
+        { "neovim/nvim-lspconfig" },
+        { "williamboman/mason.nvim" },
+        { "williamboman/mason-lspconfig.nvim" },
 
         -- Autocompletion
-        { "hrsh7th/nvim-cmp" }, -- Required
-        { "hrsh7th/cmp-nvim-lsp" }, -- Required
-        { "L3MON4D3/LuaSnip" }, -- Required
+        { "hrsh7th/nvim-cmp" },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "L3MON4D3/LuaSnip" },
     },
-    config = function ()
-        local lsp = require('lsp-zero')
+    config = function()
+        local lsp_zero = require("lsp-zero")
 
-        lsp.preset('recommended')
-
-        -- lsp.ensure_installed({
-        --     'arduino_language_server',
-        --     'ast_grep',
-        --     'bashls',
-        --     -- 'clang-format',
-        --     'clangd',
-        --     'cmake',
-        --     -- 'cmakelang',
-        --     -- 'cmakelint',
-        --     -- 'codelldb',
-        --     -- 'cpplint',
-        --     -- 'cpptools',
-        --     'cssls',
-        --     'denols',
-        --     'emmet_ls',
-        --     'eslint',
-        --     'grammarly',
-        --     'gradle_ls',
-        --     'html',
-        --     -- 'java-debug-adapter',
-        --     -- 'java-test',
-        --     'jdtls',
-        --     'lemminx',
-        --     'lua_ls',
-        --     -- 'markdownlint',
-        --     'marksman',
-        --     -- 'prettier',
-        --     -- 'prettierd',
-        --     -- 'pylint',
-        --     'pyright',
-        --     'pylsp',
-        --     'r_language_server',
-        --     'rubocop',
-        --     -- 'ruby_ls',
-        --     -- 'rubyfmt',
-        --     'rust_analyzer',
-        --     -- 'shellcheck',
-        --     'solargraph',
-        --     'svelte',
-        --     -- 'xmlformatter',
-        -- })
-
-        local cmp = require('cmp')
-        local cmp_select = { behavior = cmp.SelectBehavior.Select }
-        local cmp_mappings = lsp.defaults.cmp_mappings({
-            ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-            ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
-            ['<C-/>'] = cmp.mapping.complete()
-        })
-
-        lsp.setup_nvim_cmp({
-            mapping = cmp_mappings
-        })
-
-        lsp.on_attach(function(client, bufnr)
-            local opts = {buffer = bufnr, remap = false}
+        local lsp_attach = function(client, bufnr)
+            local opts = { buffer = bufnr, remap = false }
 
             vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -90,40 +28,65 @@ return {
             vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
             vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
             vim.keymap.set("n", "<leader>h", function() vim.lsp.buf.signature_help() end, opts)
-        end)
+        end
 
-        -- lspconfig.lua_ls.setup({
-        --     settings = {
-        --         Lua = {
-        --             runtime = {
-        --                 -- Tell the language server which version of Lua you're using
-        --                 -- (most likely LuaJIT in the case of Neovim)
-        --                 version = 'LuaJIT',
-        --             },
-        --             diagnostics = {
-        --                 -- Get the language server to recognize the `vim` global
-        --                 globals = {
-        --                     'vim',
-        --                     'require'
-        --                 },
-        --             },
-        --             workspace = {
-        --                 -- Make the server aware of Neovim runtime files
-        --                 library = vim.api.nvim_get_runtime_file("", true),
-        --             },
-        --             -- Do not send telemetry data containing a randomized but unique identifier
-        --             telemetry = {
-        --                 enable = false,
-        --             },
-        --         },
-        --     },
-        -- })
+        local has_cmp_lsp, cmp_nvim_lsp = pcall(require, "cmp_nvim-lsp")
+        local capabilities = has_cmp_lsp and cmp_nvim_lsp.default_capabilities() or nil
 
-        lsp.setup()
+        lsp_zero.extend_lspconfig({
+            sign_text = true,
+            lsp_attach = lsp_attach,
+            capabilities = capabilities,
+        })
 
-        require('lspconfig').kotlin_language_server.setup({})
-        require('lspconfig').texlab.setup({})
+        -- Setup Mason & Mason-LSPConfig safely
+        require("mason").setup({})
 
-    end
+        -- Helper function to set up LSP servers without triggering legacy lspconfig getters
+        local setup_server = function(server_name, config)
+            config = config or {}
+            if vim.lsp.config and vim.lsp.config[server_name] then
+                vim.lsp.config[server_name] = config
+                vim.lsp.enable(server_name)
+            else
+                local ok, lspconfig = pcall(require, "lspconfig")
+                if ok and lspconfig.configs and lspconfig.configs[server_name] then
+                    lspconfig.configs[server_name].setup(config)
+                end
+            end
+        end
+
+        require("mason-lspconfig").setup({
+            handlers = {
+                function(server_name)
+                    setup_server(server_name)
+                end,
+            },
+        })
+
+        -- Autocompletion setup
+        local cmp = require("cmp")
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
+
+        cmp.setup({
+            sources = {
+                { name = "nvim_lsp" },
+            },
+            mapping = cmp.mapping.preset.insert({
+                ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+                ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+                ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                ["<C-/>"] = cmp.mapping.complete(),
+            }),
+            snippet = {
+                expand = function(args)
+                    require("luasnip").lsp_expand(args.body)
+                end,
+            },
+        })
+
+        -- Manual server setups using the non-deprecated wrapper
+        setup_server("kotlin_language_server")
+        setup_server("texlab")
+    end,
 }
-
